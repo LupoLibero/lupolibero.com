@@ -1,0 +1,27 @@
+{
+  "name": "lupolibero.com",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "~0.4.3",
+    "grunt-contrib-coffee": "~0.10.1",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-shell": "~0.6.4",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LupoLibero/lupolibero.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LupoLibero/lupolibero.com/issues"
+  },
+  "homepage": "https://github.com/LupoLibero/lupolibero.com"
+}

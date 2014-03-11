@@ -4,10 +4,14 @@
   "description": "Lupo Libero's commercial website",
   "load": "lib/app",
   "modules": ["lib"],
-  "attachments": ["static", "templates"],
+  "attachments": ["static", "partials"],
+  "shell": [
+    "grunt coffee"
+  ],
   "dependencies": {
     "properties": null,
     "modules": null,
-    "attachments": null
+    "attachments": null,
+    "blocking-multi-shell": null
   }
 }

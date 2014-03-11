@@ -2,3 +2,6 @@
 /packages/
 *.*~
 .kansorc
+Thumb.db
+.DS_Store
+/static/vendor/*

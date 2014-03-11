@@ -1,0 +1,26 @@
+{
+  "name": "lupolibero.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/LupoLibero/lupolibero.com",
+  "authors": [
+    "Da Silva Jonathan <dasilvabastos.jonathan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.10.0",
+    "angular-sanitize": "~1.2.14",
+    "angular-route": "~1.2.14",
+    "bootstrap": "~3.1.1",
+    "angular": "1.2.14",
+    "angular-translate": "~2.0.1",
+    "angular-couchdb": "LupoLibero/ngCouch"
+  }
+}

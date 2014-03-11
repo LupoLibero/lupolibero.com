@@ -1,8 +1,10 @@
 angular.module('site').
-controller('ContainerCtrl', ($scope, $translate) ->
-
+controller('ContainerCtrl', ($rootScope, $translate) ->
+  # Translate the interface in the language of the navigator
   $translate.use(window.navigator.language)
-  $scope.$on('$translateLoadingError', ->
+
+  # If the language doesn't exist on the database
+  $rootScope.$on('$translateChangeError', ->
     $translate.use('en')
   )
 )

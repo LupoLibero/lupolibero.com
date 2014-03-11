@@ -1,0 +1,13 @@
+{
+  "name": "lupolibero.com",
+  "version": "0.0.1",
+  "description": "Lupo Libero's commercial website",
+  "load": "lib/app",
+  "modules": ["lib"],
+  "attachments": ["static", "templates"],
+  "dependencies": {
+    "properties": null,
+    "modules": null,
+    "attachments": null
+  }
+}

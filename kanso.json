@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Lupo Libero's commercial website",
   "load": "lib/app",
-  "modules": ["lib"],
+  "modules": ["lib", "modules", "views"],
   "attachments": ["static", "partials"],
   "shell": [
     "grunt coffee"
@@ -12,6 +12,7 @@
     "properties": null,
     "modules": null,
     "attachments": null,
-    "blocking-multi-shell": null
+    "blocking-multi-shell": null,
+    "couchtypes": null
   }
 }

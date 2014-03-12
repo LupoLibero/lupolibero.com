@@ -22,6 +22,7 @@ exports.idea_all = {
         {
           short: doc.short,
           long: doc.long,
+          img: doc.img,
         },
         {long: true, short:true}
       );

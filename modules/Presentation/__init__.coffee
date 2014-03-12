@@ -1,1 +1,1 @@
-angular.module('presentation', ['ngCouchDB', 'ngRoute'])
+angular.module('presentation', ['ngCouchDB', 'ngRoute', 'ui.bootstrap'])

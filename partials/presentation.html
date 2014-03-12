@@ -7,33 +7,12 @@
   <!-- Divider -->
   <div class="hr5" style="margin-top:30px; margin-bottom:45px;"></div>
 
-  <!-- Accordion -->
-  <div class="panel-group" id="accordion">
-
-    <!-- Start Accordion 1 -->
-    <div class="panel panel-default" ng-repeat="idea in ideas">
-      <!-- Toggle Heading -->
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse-4">
-            <i class="icon-down-open-1 control-icon"></i>
-            <i class="icon-laptop-1"></i>
-            {{ idea.short }}
-          </a>
-        </h4>
-      </div>
-      <!-- Toggle Content -->
-      <div id="collapse-4" class="panel-collapse collapse in">
-        <div class="panel-body">
-          <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" />
-          {{ idea.long }}
-        </div>
-      </div>
-    </div>
-    <!-- End Accordion  1-->
-
-  </div>
-  <!-- End Accordion -->
+  <accordion close-others="oneAtATime">
+    <accordion-group ng-repeat="idea in ideas" heading="{{ idea.short }}" is-open="$first">
+      <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" />
+      {{ idea.long }}
+    </accordion-group>
+  </accordion>
 
   <!-- Price Table -->
   <table>

@@ -24,6 +24,7 @@
 <body ng-controller="ContainerCtrl">
   <div id="container">
 
+    <div class="hidden-header"></div>
     <!-- Header -->
     <header class="clearfix">
 
@@ -193,7 +194,7 @@
           <!-- Page Content -->
           <div class="col-md-9 page-content" ng-view></div>
           <!--Sidebar-->
-          <div class="col-md-3 sidebar right-sidebar" ng-include="partials/sidebar.html"></div>
+          <div class="col-md-3 sidebar right-sidebar" ng-include="'partials/sidebar.html'"></div>
         </div>
       </div>
     </div>

@@ -16,3 +16,17 @@ exports.presentation = new Type('presentation', {
     content: translatableField(),
   }
 });
+
+exports.idea = new Type('idea', {
+  permissions: {
+    add: permissions.hasRole('_admin'),
+    update: permissions.hasRole('_admin'),
+    remove: permissions.hasRole('_admin')
+  },
+  fields: {
+    id: fields.string(),
+    short: translatableField(),
+    long: translatableField(),
+    img: fields.string(),
+  }
+});

@@ -13,3 +13,19 @@ exports.presentation_get = {
   }
 }
 
+exports.idea_all = {
+  map: function(doc) {
+    var translation = require('views/lib/translation').translation;
+    if(doc.type && doc.type == 'idea'){
+      translation.emitTranslatedDoc(
+        [translation._keyTag, doc._id],
+        {
+          short: doc.short,
+          long: doc.long,
+        },
+        {long: true, short:true}
+      );
+    }
+  }
+}
+

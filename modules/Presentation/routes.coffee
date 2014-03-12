@@ -10,5 +10,10 @@ config( ($routeProvider) ->
           return Presentation.get({
             key: [window.navigator.language]
           })
+        ideas: (Idea) ->
+          return Idea.all({
+            startkey:  [window.navigator.language, ""]
+            endkey:    [window.navigator.language, {}]
+          })
     })
 )

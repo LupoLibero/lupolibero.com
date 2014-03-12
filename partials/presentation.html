@@ -7,7 +7,7 @@
   <!-- Divider -->
   <div class="hr5" style="margin-top:30px; margin-bottom:45px;"></div>
 
-  <accordion close-others="oneAtATime">
+  <accordion close-others="true">
     <accordion-group ng-repeat="idea in ideas" heading="{{ idea.short }}" is-open="$first">
       <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" />
       {{ idea.long }}

@@ -22,6 +22,10 @@
     "angular": "1.2.14",
     "angular-translate": "~2.0.1",
     "angular-couchdb": "LupoLibero/ngCouch",
-    "angular-resource": "~1.2.14"
+    "angular-resource": "~1.2.14",
+    "angular-spinner": "~0.4.0"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
   }
 }

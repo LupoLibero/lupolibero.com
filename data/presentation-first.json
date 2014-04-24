@@ -1,0 +1,9 @@
+{
+  "_id": "presentation-first",
+  "_rev": "1-755b605efb2ffde9bd5f538420125cce",
+  "id": "first",
+  "type": "presentation",
+  "content": {
+    "fr": "test presentation"
+  }
+}

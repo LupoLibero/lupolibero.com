@@ -32,11 +32,35 @@ module.exports = (grunt) ->
     shell:{
       options:
         stdout: true
+      kansoDelete:{
+        command: ->
+          name = grunt.option('db') || 'default'
+          return "kanso deletedb #{name}"
+      }
+      kansoCreate:{
+        command: ->
+          name = grunt.option('db') || 'default'
+          return "kanso createdb #{name}"
+      }
+      kansoInit:{
+        command: ->
+          name = grunt.option('db') || 'default'
+          return "kanso upload ./data #{name}"
+      }
       kansoPush:{
-        command: 'kanso push http://admin:admin@127.0.0.1:5984/site'
+        command: ->
+          name = grunt.option('db') || 'default'
+          return "kanso push #{name}"
       }
     }
   }
+
+  grunt.registerTask('init', [
+    'shell:kansoDelete'
+    'shell:kansoCreate'
+    'shell:kansoInit'
+    'shell:kansoPush'
+  ])
 
   grunt.registerTask('default', [
     'watch'

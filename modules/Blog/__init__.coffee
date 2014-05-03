@@ -1,0 +1,1 @@
+angular.module('blog', ['ngCouchDB', 'ngRoute', 'ui.bootstrap'])

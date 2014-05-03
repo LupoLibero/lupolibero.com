@@ -2,14 +2,14 @@
 <h4 class="classic-title"><span>Page With Right Sidebar</span></h4>
 
 <!-- Some Text -->
-<p>{{ presentation }}</p>
+<p>{{ page.presentation }}</p>
 
 <!-- Divider -->
 <div class="hr5" style="margin-top:30px; margin-bottom:45px;"></div>
 
 <accordion close-others="true">
-  <accordion-group ng-repeat="idea in ideas" heading="{{ idea.short }}" is-open="$first">
-    <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" />
+  <accordion-group ng-repeat="idea in page.ideas" heading="{{ idea.short }}" is-open="$first">
+    <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" ng-show="{{ idea.img }}"/>
     {{ idea.long }}
   </accordion-group>
 </accordion>

@@ -7,4 +7,7 @@ controller('ContainerCtrl', ($rootScope, $translate) ->
   $rootScope.$on('$translateChangeError', ->
     $translate.use('en')
   )
+
+  $rootScope.facebookLikeAllowed = false
+  $rootScope.googlePlusAllowed = false
 )

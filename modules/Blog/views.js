@@ -39,3 +39,23 @@ exports.blogpost_all = {
   }
 }
 
+exports.blogpost_max = {
+  map: function(doc) {
+    if(doc.type && doc.type == 'blogpost'){
+      emit(null, doc);
+    }
+  },
+  reduce: function(keys, values, rereduce){
+    if(rereduce) {
+      max = 0;
+      for(i in values) {
+        max += values[i].max;
+      }
+    } else {
+      max = values.length;
+    }
+    return {
+      max: max,
+    }
+  }
+}

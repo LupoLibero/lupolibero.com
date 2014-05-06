@@ -1,51 +1,51 @@
 [
   {
-     "_id": "presentation-en",
-     "ideas": [
-         {
-             "short": "en short presentation",
-             "long": "en long presentation\nblablabla",
-             "img": ""
-         }
-     ],
-     "presentation": "efizjfoij ozjefoiz jeofijzofi jzoafjozmfj oiezjfmzf",
-     "name": "Presentation"
+    "_id": "presentation-en",
+    "ideas": [
+      {
+        "short": "en short presentation",
+        "long": "en long presentation\nblablabla",
+        "img": ""
+      }
+    ],
+    "presentation": "efizjfoij ozjefoiz jeofijzofi jzoafjozmfj oiezjfmzf",
+    "name": "Presentation"
   },
   {
-     "_id": "presentation-fr",
-     "ideas": [
-         {
-             "short": "fr short presentation",
-             "long": "fr long presentation\nblablabla",
-             "img": ""
-         }
-     ],
-     "presentation": "efizjfoij ozjefoiz jeofijzofi jzoafjozmfj oiezjfmzf",
-     "name": "Presentation"
+    "_id": "presentation-fr",
+    "ideas": [
+      {
+        "short": "fr short presentation",
+        "long": "fr long presentation\nblablabla",
+        "img": ""
+      }
+    ],
+    "presentation": "efizjfoij ozjefoiz jeofijzofi jzoafjozmfj oiezjfmzf",
+    "name": "Presentation"
   },
   {
-     "_id": "contact-en",
-     "title": "Contact Us",
-     "name": {
-         "label": "Name",
-         "missing": "Please enter your name"
-     },
-     "email": {
-         "label": "Email",
-         "missing": "Please enter a valid e-mail"
-     },
-     "website": {
-         "label": "Website"
-     },
-     "comment": {
-         "label": "Add Your Comment",
-         "missing": "Say something!"
-     },
-     "submit": {
-         "label": "Send Message"
-     }
+    "_id": "contact-en",
+    "title": "Contact Us",
+    "name": {
+      "label": "Name",
+      "missing": "Please enter your name"
+    },
+    "email": {
+      "label": "Email",
+      "missing": "Please enter a valid e-mail"
+    },
+    "website": {
+      "label": "Website"
+    },
+    "comment": {
+      "label": "Add Your Comment",
+      "missing": "Say something!"
+    },
+    "submit": {
+      "label": "Send Message"
+    }
   },
   {
-     "_id": "home-en",
+    "_id": "home-en"
   }
 ]

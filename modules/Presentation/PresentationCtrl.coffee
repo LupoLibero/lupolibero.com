@@ -1,5 +1,5 @@
 angular.module('presentation').
-controller('PresentationCtrl', ($scope, presentation, ideas) ->
-  $scope.page = presentation
-  #$scope.ideas = ideas
+controller('PresentationCtrl', ($scope, page) ->
+  $scope.presentation  = page.presentation
+  $scope.ideas         = page.ideas
 )

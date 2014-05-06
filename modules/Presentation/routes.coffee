@@ -6,15 +6,10 @@ config( ($routeProvider) ->
       templateUrl: './partials/presentation.html'
       controller:  'PresentationCtrl'
       resolve:
-        presentation: (Presentation) ->
+        page: (Presentation) ->
           pageName = 'presentation-en' #+ window.navigator.language
           return Presentation.getDoc({
             _id: pageName
-          })
-        ideas: (Idea) ->
-          return Idea.all({
-            startkey:  [window.navigator.language, ""]
-            endkey:    [window.navigator.language, {}]
           })
     })
     .when('/home', {

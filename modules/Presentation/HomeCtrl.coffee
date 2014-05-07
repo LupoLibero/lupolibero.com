@@ -1,4 +1,3 @@
 angular.module('presentation').
-controller('PresentationCtrl', ($scope, presentation) ->
-  $scope.page = presentation
+controller('HomeCtrl', ($scope) ->
 )

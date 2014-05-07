@@ -11,3 +11,6 @@
 [submodule "modules/Breadcrumb"]
 	path = modules/Breadcrumb
 	url = https://github.com/LupoLibero/couch-ng-Breadcrumb
+[submodule "modules/Notification"]
+	path = modules/Notification
+	url = https://github.com/LupoLibero/couch-ng-Notification

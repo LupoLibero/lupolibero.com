@@ -5,5 +5,4 @@ controller('BlogpostListCtrl', ($scope, blogpostList, blogpostListDefault, post_
     max:    post_max[0].max
     actual: parseInt($route.current.params.page ? 1)
   }
-  console.log $scope.page
 )

@@ -1,36 +1,33 @@
-    <!-- Classic Heading -->
-  <h4 class="classic-title"><span>{{ page.title }}</span></h4>
+<!-- Classic Heading -->
+<h4 class="classic-title"><span>{{ page.title }}</span></h4>
 
-    <!-- Start Contact Form -->
-  <div id="contact-form" class="contact-form">
-        <div class="loader"></div>
-    <form action="{{ form_action }}" class="contactForm" name="cform" method="post">
-          <div class="row">
-              <div class="col-md-4">
-                  <label for="name">{{ page.name.label }}<span class="required">*</span></label>
-                    <span class="name-missing">{{ page.name.missing }}</span>
-                    <input id="name" name="name" type="text" value="" size="30">
-                </div>
-                <div class="col-md-4">
-                  <label for="e-mail">{{ page.email.label }}<span class="required">*</span></label>
-                    <span class="email-missing">{{ page.email.missing }}</span>
-                    <input id="e-mail" name="email" type="text" value="" size="30">
-                </div>
-                <div class="col-md-4">
-                      <label for="url">{{ page.website.label }}</label>
-                        <input id="url" name="url" type="text" value="" size="30">
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                  <label for="message">{{ page.website.label }}</label>
-                    <span class="message-missing">{{ page.website.missing }}</span>
-                    <textarea id="message" name="message" cols="45" rows="10"></textarea>
-                    <input type="submit" name="submit" class="button" id="submit_btn" value="{{ page.submit.label }}">
-                </div>
-            </div>
-        </form>
+<!-- Start Contact Form -->
+<div id="contact-form" class="contact-form">
+  <div class="loader"></div>
+  <form action="{{ form_action }}" class="contactForm" ng-submit="sendContact()">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="name">{{ page.name.label }}<span class="required">*</span></label>
+        <span class="name-missing">{{ page.name.missing }}</span>
+        <input id="name" ng-model="contact.name" type="text" size="30">
+      </div>
+      <div class="col-md-4">
+        <label for="e-mail">{{ page.email.label }}<span class="required">*</span></label>
+        <span class="email-missing">{{ page.email.missing }}</span>
+        <input id="e-mail" ng-model="contact.email" type="email" size="30">
+      </div>
+      <div class="col-md-4">
+        <label for="url">{{ page.website.label }}</label>
+        <input id="url" ng-model="contact.url" type="text" size="30">
+      </div>
     </div>
-    <!-- End Contact Form -->
-
+    <div class="row">
+      <div class="col-md-12">
+        <label for="message">{{ page.website.label }}</label>
+        <span class="message-missing">{{ page.website.missing }}</span>
+        <textarea id="message" ng-model="contact.message" cols="45" rows="10"></textarea>
+        <input type="submit" class="button" id="submit_btn" value="{{ page.submit.label }}">
+      </div>
+    </div>
+  </form>
 </div>

@@ -1,88 +1,71 @@
+<div class="row blog-post-page">
+  <div class="col-md-9 blog-box">
 
-<!-- Start Content -->
-<div id="content">
-  <div class="container">
-    <div class="row blog-post-page">
-      <div class="col-md-9 blog-box">
-
-          <!-- Start Single Post Area -->
-          <div class="blog-post">
-            <!-- Start Single Post Content -->
-          <div class="post-content">
-            <div class="post-type"><i class=" icon-picture-1"></i></div>
-            <h2>{{ blogpost.title }}</h2>
-            <ul class="post-meta">
-              <li>By <a href="#">{{ blogpost.author }}</a></li>
-                <li>{{ blogpost.created_at }}</li>
-                <!--<li><a href="#">WordPress</a>, <a href="#">Graphic</a></li>-->
-                <li><a href="#">{{ commentNb }} Comments</a></li>
-            </ul>
-            <p style="white-space: pre-line;">{{ blogpost.long }}</p>
-            <div class="post-bottom clearfix">
-                <div class="post-tags-list">
-                    <a href="#">Theme</a>
-                    <a href="#">Mobile</a>
-                    <a href="#">Design</a>
-                    <a href="#">Wordpress</a>
-                    <a href="#">Jquery</a>
-                </div>
-                <div class="post-share">
-                    <span>Share This Post:</span>
-                    <a class="facebook" href="#"><i class="icon-facebook"></i></a>
-                    <a class="twitter" href="#"><i class="icon-twitter"></i></a>
-                    <a class="gplus" href="#"><i class="icon-gplus"></i></a>
-                    <ul ng-social-buttons
-                     data-url="'http://news.mistinfo.com/'"
-                     data-title="'test'"
-                     data-description="'test2'"
-                     data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
-                      <li>Share This Post:</li>
-                      <li><button ng-click="facebookLikeAllowed = !facebookLikeAllowed"></button></li>
-                      <li ng-switch="facebookLikeAllowed">
-                        <span ng-switch-when="true"><span class="ng-social-facebook">Facebook</span></span>
-                        <span ng-switch-when="false">FB</span>
-                      </li>
-                      <li ng-switch="googlePlusAllowed">
-                        <button ng-click="googlePlusAllowed = !googlePlusAllowed"></button>
-                        <span ng-switch-when="true"><span class="ng-social-google-plus">Google+</span></span>
-                        <span ng-switch-when="false">G+</span>
-                      </li>
-                       <li ng-switch="TwitterAllowed">
-                        <button ng-click="TwitterAllowed = !TwitterAllowed"></button>
-                        <span ng-switch-when="true"><span class="ng-social-twitter">Twitter</span></span>
-                        <span ng-switch-when="false">T</span>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="author-info clearfix">
-              <div class="author-image">
-                  <a href="#"><img alt="" src="http://placehold.it/70x70/fff/444"/></a>
-                </div>
-                <div class="author-bio">
-                  <h4>About The Author</h4>
-                    <p>{{ author.bio }}</p>
-                </div>
-            </div>
+    <!-- Start Single Post Area -->
+    <div class="blog-post">
+      <!-- Start Single Post Content -->
+      <div class="post-content">
+        <div class="post-type"><i class=" icon-picture-1"></i></div>
+        <h2>{{ blogpost.title }}</h2>
+        <ul class="post-meta">
+          <li>By <a href="#">{{ blogpost.author }}</a></li>
+          <li>{{ blogpost.created_at |date }}</li>
+          <li><a href="#">{{ commentNb }} Comments</a></li>
+        </ul>
+        <p style="white-space: pre-line;">{{ blogpost.long }}</p>
+        <div class="post-bottom clearfix">
+          <div class="post-tags-list">
+            <a href="#">Theme</a>
+            <a href="#">Mobile</a>
+            <a href="#">Design</a>
+            <a href="#">Wordpress</a>
+            <a href="#">Jquery</a>
           </div>
-          <!-- End Single Post Content -->
-
+          <div class="post-share">
+            <span>Share This Post:</span>
+            <ul ng-social-buttons
+              data-url="$location.path()"
+              data-title="'test'"
+              data-description="'test2'"
+              data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
+              <li>Share This Post:</li>
+              <li ng-switch="$storage.facebook">
+                <button ng-click="$storage.facebook = !$storage.facebook">Allow</button>
+                <span ng-switch-when="true"><span class="ng-social-facebook">Facebook</span></span>
+                <span ng-switch-when="false">FB</span>
+              </li>
+              <li ng-switch="$storage.googlePlus">
+                <button ng-click="$storage.googlePlus = !$storage.googlePlus">Allow</button>
+                <span ng-switch-when="true"><span class="ng-social-google-plus">Google+</span></span>
+                <span ng-switch-when="false">G+</span>
+              </li>
+              <li ng-switch="$storage.twitter">
+                <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>
+                <span ng-switch-when="true"><span class="ng-social-twitter">Twitter</span></span>
+                <span ng-switch-when="false">T</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <!-- End Single Post Area -->
-
-        <!-- Start Comment Area -->
-        <div id="spinner-comments" ng-hide="comments">Spinner</div>
-        <div id="comments" ng-show="comments">
-          <h2 class="comments-title">({{ commentNb }}) Comments</h2>
-            <ol class="comments-list" ng-include="'comment.html'"></ol>
-
-            <!-- Start Respond Form -->
-            <div ng-include="'add_comment.html'"></div>
-            <!-- End Respond Form -->
-
+        <div class="author-info clearfix">
+          <div class="author-image">
+            <a href="#"><img alt="" src="http://placehold.it/70x70/fff/444"/></a>
+          </div>
+          <div class="author-bio">
+            <h4>About The Author</h4>
+            <p>{{ author.bio }}</p>
+          </div>
         </div>
-        <!-- End Comment Area -->
-
       </div>
+    </div>
+  </div>
+  <!-- End Single Post Area -->
 
-
+  <!-- Start Comment Area -->
+  <div id="spinner-comments" ng-if="!comments" us-spinner></div>
+  <div id="comments" ng-if="comments">
+    <h2 class="comments-title">({{ commentNb }}) Comments</h2>
+    <ol class="comments-list" ng-include="'comment.html'"></ol>
+    <div ng-include="'add_comment.html'"></div>
+  </div> <!-- End Comment Area -->
+</div>

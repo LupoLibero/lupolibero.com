@@ -1,5 +1,6 @@
 angular.module('site').
-controller('ContainerCtrl', ($rootScope, $translate) ->
+controller('ContainerCtrl', ($scope, $rootScope, $translate, $localStorage)->
+  $rootScope.$storage  = $localStorage
   # Translate the interface in the language of the navigator
   $translate.use(window.navigator.language)
 

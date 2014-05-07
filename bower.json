@@ -24,7 +24,8 @@
     "angular-couchdb": "LupoLibero/ngCouch",
     "angular-resource": "~1.2.14",
     "angular-spinner": "~0.4.0",
-    "angular-social": "~0.1.1"
+    "angular-social": "~0.1.1",
+    "ngstorage": "~0.3.0"
   },
   "resolutions": {
     "angular": "1.2.16"

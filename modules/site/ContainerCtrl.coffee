@@ -4,7 +4,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $translate, $localStorage, $loc
   $rootScope.$location = $location
 
   $rootScope.$on('$routeChangeSuccess', ->
-    $scope.title = $route.routes[$location.path()].name
+    $scope.title = $route.routes[$location.path()]?.name ? $route.current.params.blogpostId
   )
 
   # Translate the interface in the language of the navigator

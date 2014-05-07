@@ -1,5 +1,5 @@
 angular.module('site').
-controller('ContainerCtrl', ($scope, $rootScope, $translate, $localStorage, $location)->
+controller('ContainerCtrl', ($scope, $rootScope, $translate, $localStorage, $location, $route)->
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 

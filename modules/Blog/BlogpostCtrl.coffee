@@ -30,7 +30,8 @@ controller('BlogpostCtrl', ($scope, blogpost, Comment) ->
 
   $scope.addComment = (comment) ->
     if comment.message?  and comment.message != '' and
-    comment.name and comment.email
+    comment.name? and comment.name != '' and
+    comment.email? and comment.email != ''
       $scope.loading = true
 
       Comment.update({

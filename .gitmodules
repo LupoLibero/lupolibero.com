@@ -17,7 +17,7 @@
 [submodule "modules/Notification"]
 	path = modules/Notification
 	url = https://github.com/LupoLibero/couch-ng-Notification.git
-	branch = master
+	branch = no-socket
 [submodule "modules/lib"]
 	path = modules/lib
 	url = https://github.com/LupoLibero/lib.git

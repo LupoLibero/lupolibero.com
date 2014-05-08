@@ -1,8 +1,8 @@
 angular.module('blog').
-controller('BlogpostListCtrl', ($scope, blogpostList, blogpostListDefault, post_max, $route) ->
+controller('BlogpostListCtrl', ($state, $scope, blogpostList, blogpostListDefault, post_max) ->
   $scope.blogpostList = blogpostListDefault
   $scope.page = {
     max:    post_max[0].max
-    actual: parseInt($route.current.params.page ? 1)
+    actual: parseInt($state.params.page ? 1)
   }
 )

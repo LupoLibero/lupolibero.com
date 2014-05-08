@@ -1,1 +1,1 @@
-angular.module('blog', ['ngCouchDB', 'ngRoute', 'ui.bootstrap', 'angularSpinner'])
+angular.module('blog', ['ngCouchDB', 'ui.router', 'ui.bootstrap', 'angularSpinner'])

@@ -1,6 +1,6 @@
 [
   {
-    "_id": "presentation-en",
+    "_id": "presentation:en",
     "ideas": [
       {
         "short": "en short presentation",
@@ -12,7 +12,7 @@
     "name": "Presentation"
   },
   {
-    "_id": "presentation-fr",
+    "_id": "presentation:fr",
     "ideas": [
       {
         "short": "fr short presentation",
@@ -24,7 +24,7 @@
     "name": "Presentation"
   },
   {
-    "_id": "contact-en",
+    "_id": "contact:en",
     "title": "Contact Us",
     "name": {
       "label": "Name",
@@ -46,6 +46,6 @@
     }
   },
   {
-    "_id": "home-en"
+    "_id": "home:en"
   }
 ]

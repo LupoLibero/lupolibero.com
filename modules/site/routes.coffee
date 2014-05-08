@@ -1,5 +1,5 @@
 angular.module('site').
-config( ($routeProvider) ->
-  $routeProvider
-    .otherwise({ redirectTo: '/presentation' })
+config( ($urlRouterProvider) ->
+  $urlRouterProvider
+    .otherwise("presentation")
 )

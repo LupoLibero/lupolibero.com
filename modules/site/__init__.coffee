@@ -1,5 +1,5 @@
 angular.module('site', [
-  'ngRoute'
+  'ui.router'
   'dbSelect'
   'gettext'
   'url'

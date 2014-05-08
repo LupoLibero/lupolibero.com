@@ -3,8 +3,12 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location)->
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
-  $rootScope.$on('$routeChangeSuccess', ->
-    $scope.title = $route.routes[$location.path()]?.name ? $route.current.params.blogpostId
+  $rootScope.$on('$stateChangeSuccess', ($event, to)->
+    $scope.title = to.name
+  )
+
+  $rootScope.$on('$stateChangeError', ($event, toState, toParams, fromState, fromParams, error)->
+    console.log $event, toState, toParams, fromState, fromParams, error
   )
 
   # Translate the interface in the language of the navigator

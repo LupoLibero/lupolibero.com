@@ -1,17 +1,17 @@
 angular.module('blog').
-config( ($routeProvider) ->
-  $routeProvider
-    .when('/blog', {
-      name:        'blogpostList'
-      templateUrl: './partials/blogpost_list.html'
+config( ($stateProvider) ->
+  $stateProvider
+    .state('blog', {
+      url:         '/blog'
+      templateUrl: './partials/Blog/list.html'
       controller:  'BlogpostListCtrl'
-      resolve:
+      resolve: {
         post_max: (Blogpost) ->
           return Blogpost.view({
             view: 'max'
           })
-        blogpostList: (Blogpost, $route) ->
-          page =  $route.current.params.page ? 1
+        blogpostList: (Blogpost, $stateParams) ->
+          page =  $stateParams.page ? 1
           page--
           return Blogpost.all({
             descending: true
@@ -20,8 +20,8 @@ config( ($routeProvider) ->
             limit:      10
             skip:       page*10
           })
-        blogpostListDefault: (Blogpost, $route) ->
-          page =  $route.current.params.page ? 1
+        blogpostListDefault: (Blogpost, $stateParams) ->
+          page =  $stateParams.page ? 1
           page--
           return Blogpost.all({
             descending: true
@@ -30,15 +30,18 @@ config( ($routeProvider) ->
             limit:      10
             skip:       page*10
           })
+      }
     })
-    .when('/blog/:blogpostId', {
-      name:        'blogpost'
-      templateUrl: './partials/blogpost.html'
+    .state('blogpost', {
+      url:         '/blog/:blogpostId'
+      templateUrl: './partials/Blog/show.html'
       controller:  'BlogpostCtrl'
-      resolve:
-        blogpost: ($route, Blogpost) ->
-          return Blogpost.get({
-            key: $route.current.params.blogpostId
+      resolve: {
+        blogpost: (Blogpost, $stateParams) ->
+          lang = window.navigator.language
+          return Blogpost.all({
+            key: [$stateParams.blogpostId, lang]
           })
+      }
     })
 )

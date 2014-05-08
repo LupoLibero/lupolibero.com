@@ -78,10 +78,10 @@
 
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
-              <li><a translate>Home</a></li>
-              <li><a translate>Presentation</a></li>
-              <li><a translate>Blog</a></li>
-              <li><a translate>Contact</a></li>
+              <li><a ui-sref-active="active" ui-sref="home"         translate>Home</a></li>
+              <li><a ui-sref-active="active" ui-sref="presentation" translate>Presentation</a></li>
+              <li><a ui-sref-active="active" ui-sref="blog"         translate>Blog</a></li>
+              <li><a ui-sref-active="active" ui-sref="contact"      translate>Contact</a></li>
             </ul>
             <!-- End Navigation List -->
 
@@ -114,7 +114,7 @@
       <div class="container">
         <div class="row">
           <!-- Page Content -->
-          <div class="page-content" ng-view></div>
+          <div class="page-content" ui-view></div>
         </div>
       </div>
     </div>
@@ -259,7 +259,7 @@
 
   <!-- Angular -->
   <script src="vendor/angular/angular.js                                "></script>
-  <script src="vendor/angular-route/angular-route.js                    "></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.js    "></script>
   <script src="vendor/angular-animate/angular-animate.js                "></script>
   <script src="vendor/angular-sanitize/angular-sanitize.js              "></script>
   <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js            "></script>

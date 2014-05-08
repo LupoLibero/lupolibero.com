@@ -1,0 +1,30 @@
+<!-- Start Blog Posts -->
+<div class="col-md-9 blog-box" ng-repeat="blogpost in blogpostList">
+
+  <!-- Start Post -->
+  <div class="blog-post image-post">
+    <!-- Post Thumb -->
+    <div class="post-head">
+      <a class="lightbox" title="This is an image title" href="http://placehold.it/1024x620/eee">
+        <div class="thumb-overlay"><i class="icon-resize-full"></i></div>
+        <img alt="" src="http://placehold.it/848x350/333/666"/>
+      </a>
+    </div>
+    <!-- Post Content -->
+    <div class="post-content">
+      <div class="post-type"><i class="icon-picture-3"></i></div>
+      <h2><a ng-href="#/blog/{{ blogpost.slug }}">{{ blogpost.title }}</a></h2>
+      <ul class="post-meta">
+        <li>By {{ blogpost.author }}</li>
+        <li>{{ blogpost.created_at }}</li>
+        <li><a href="#">{{ comments.length }} Comments</a></li>
+      </ul>
+        <p>{{ blogpost.short }}</p>
+        <a class="main-button" ng-href="#/blog/{{ blogpost.slug }}">Read More <i class="icon-right-small"></i></a>
+    </div>
+  </div>
+  <!-- End Post -->
+</div>
+<!-- End Blog Posts -->
+
+<pagination total-items="page.max" ng-model="page.actual"></pagination>

@@ -15,6 +15,13 @@ controller('ContainerCtrl', ($scope, $rootScope, $translate, $localStorage, $loc
     $translate.use('en')
   )
 
-  $rootScope.facebookLikeAllowed = false
-  $rootScope.googlePlusAllowed = false
+  unless $rootScope.$storage.facebook?
+    $rootScope.$storage.facebook = false
+  unless $rootScope.$storage.twitter?
+    $rootScope.$storage.twitter = false
+  unless $rootScope.$storage.googlePlus?
+    $rootScope.$storage.googlePlus = false
+
+  $scope.facebookCount = 43
+  $scope.twitterCount = 2
 )

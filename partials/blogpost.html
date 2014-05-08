@@ -22,28 +22,28 @@
             <a href="#">Jquery</a>
           </div>
           <div class="post-share">
-            <span>Share This Post:</span>
             <ul ng-social-buttons
-              data-url="$location.path()"
+              data-url="$location.absUrl()"
               data-title="'test'"
               data-description="'test2'"
               data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
               <li>Share This Post:</li>
               <li ng-switch="$storage.facebook">
                 <button ng-click="$storage.facebook = !$storage.facebook">Allow</button>
-                <span ng-switch-when="true"><span class="ng-social-facebook">Facebook</span></span>
-                <span ng-switch-when="false">FB</span>
-              </li>
-              <li ng-switch="$storage.googlePlus">
+                <span ng-switch-when="true"><span class="ng-social-facebook" count="{{ facebookCount }}"></span>
+                </span>
+                <span ng-switch-when="false">FB<span ng-show="facebookCount"> ({{ facebookCount }})</span></span>
+              <li ng-switch="$storage.twitter">
+                <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>
+                <span ng-switch-when="true"><span class="ng-social-twitter" count="{{ twitterCount }}"></span></span>
+                <span ng-switch-when="false">T<span ng-show="facebookCount"> ({{ twitterCount }})</span></span>
+              </li></li>
+              <!--<li ng-switch="$storage.googlePlus">
                 <button ng-click="$storage.googlePlus = !$storage.googlePlus">Allow</button>
                 <span ng-switch-when="true"><span class="ng-social-google-plus">Google+</span></span>
                 <span ng-switch-when="false">G+</span>
-              </li>
-              <li ng-switch="$storage.twitter">
-                <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>
-                <span ng-switch-when="true"><span class="ng-social-twitter">Twitter</span></span>
-                <span ng-switch-when="false">T</span>
-              </li>
+              </li>-->
+              <li>To protect your privacy, social network links are disabled by default but you are free to enable them</li>
             </ul>
           </div>
         </div>

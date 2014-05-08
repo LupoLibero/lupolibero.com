@@ -54,4 +54,6 @@ controller('BlogpostCtrl', ($scope, blogpost, Comment) ->
           $scope.loading = false
       )
 
+  $scope.facebookCount = 43
+  $scope.twitterCount = 2
 )

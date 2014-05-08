@@ -1,7 +1,7 @@
 [
   {
     "_id": "1570f0b016b6cec7bfafa8ead70031b9",
-    "parent_id": "blogpost:Sylvain Duchesne-21827412141-toto-e41a",
+    "parent_id": "blogpost:Sylvain Duchesne-1399129075000-toto-e4a1",
     "type": "comment",
     "author": "toto",
     "email": "toto@toto.com",
@@ -30,7 +30,7 @@
   },
   {
     "_id": "1570f0b016b6cec7bfafa8ead7004109",
-    "parent_id": "blogpost:Sylvain Duchesne-21827412141-toto-e41a",
+    "parent_id": "blogpost:Sylvain Duchesne-1399129075000-toto-e4a1",
     "type": "comment",
     "author": "Robert",
     "email": "robert@toto.com",

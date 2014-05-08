@@ -2,7 +2,6 @@ angular.module('site', [
   'ui.router'
   'dbSelect'
   'gettext'
-  'url'
   'ngCouchDB'
   'presentation'
   'breadcrumb'

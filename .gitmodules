@@ -13,4 +13,7 @@
 	url = https://github.com/LupoLibero/couch-ng-Breadcrumb
 [submodule "modules/Notification"]
 	path = modules/Notification
-	url = https://github.com/LupoLibero/couch-ng-Notification
+	url = https://github.com/LupoLibero/couch-ng-Notification.git
+[submodule "modules/lib"]
+	path = modules/lib
+	url = https://github.com/LupoLibero/lib.git

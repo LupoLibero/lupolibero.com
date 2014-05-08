@@ -1,12 +1,19 @@
 angular.module('presentation').
-controller('ContactCtrl', ($scope, presentation) ->
+controller('ContactCtrl', ($scope, presentation, Notif) ->
   $scope.page        = presentation
   $scope.form_action = ""
   $scope.contact     = {}
 
   $scope.sendContact = ->
-    Notification.update({
-      update: 'create'
+    Notif.update({
+      update: 'create_contact'
+      message_txt: """
+                   #{$scope.contact.name} <#{$scope.contact.email}>
+                   #{$scope.contact.message}
+                   #{$scope.contact.url}
+                   """
+      subject: "#{$scope.contact.name} <#{$scope.contact.email}>"
+      name:    $scope.contact.name
     }).then(
       (data)-> #Success
         console.log data

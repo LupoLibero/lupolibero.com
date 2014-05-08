@@ -7,7 +7,6 @@ exports.blogpost_get = {
         slug = doc.slug[lang] || doc.slug.en;
         emit(slug, {
           _id:           doc._id,
-          short:        doc.short[lang] || doc.short.en,
           title:        doc.title[lang] || doc.title.en,
           long:         doc.long[lang],
           slug:         slug,

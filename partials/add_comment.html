@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col-md-4">
         <label for="author">Name<span class="required">*</span></label>
-        <input id="author" type="text" size="30" aria-required="true" ng-model="newComment.name">
+        <input id="author" type="text" size="30" aria-required="true" ng-model="newComment.name" required>
       </div>
       <div class="col-md-4">
         <label for="email">Email<span class="required">*</span></label>
-        <input id="email" type="email" size="30" aria-required="true" ng-model="newComment.email">
+        <input id="email" type="email" size="30" aria-required="true" ng-model="newComment.email" required>
       </div>
       <div class="col-md-4">
         <label for="url">Website</label>
@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-md-12">
         <label for="comment">Add Your Comment<span class="required">*</span></label>
-        <textarea id="comment" cols="45" rows="8" aria-required="true" ng-model="newComment.message"></textarea>
+        <textarea id="comment" cols="45" rows="8" aria-required="true" ng-model="newComment.message" required></textarea>
         <input type="submit" id="submit" name="submit" value="Submit Comment">
       </div>
     </div>

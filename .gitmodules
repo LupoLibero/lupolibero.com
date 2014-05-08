@@ -1,7 +1,3 @@
-[submodule "modules/Url"]
-	path = modules/Url
-	url = https://github.com/LupoLibero/couch-ng-Url.git
-	branch = master
 [submodule "modules/Translation"]
 	path = modules/Translation
 	url = https://github.com/LupoLibero/couch-ng-Translation

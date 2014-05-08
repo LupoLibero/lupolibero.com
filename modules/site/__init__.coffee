@@ -1,7 +1,7 @@
 angular.module('site', [
   'ngRoute'
   'dbSelect'
-  'translation'
+  'gettext'
   'url'
   'ngCouchDB'
   'presentation'

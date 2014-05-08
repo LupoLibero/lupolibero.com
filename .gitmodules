@@ -17,3 +17,6 @@
 [submodule "modules/lib"]
 	path = modules/lib
 	url = https://github.com/LupoLibero/lib.git
+[submodule "modules/Directives"]
+	path = modules/Directives
+	url = https://github.com/LupoLibero/directives.git

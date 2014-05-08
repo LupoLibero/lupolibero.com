@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport"    content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Venda - Responsive HTML5 Template">
-  <meta name="author"      content="ZoOm Arts">
+  <meta name="author"      content="Lupo Libero">
 
   <title>Lupo Libero</title>
 
@@ -37,12 +37,11 @@
           <div class="row">
 
             <!-- Start Social Links -->
-            <div class="col-md-6">
+            <div class="col-md-offset-6 col-md-6">
               <ul class="social-list">
                 <li><a class="facebook sh-tooltip" data-placement="bottom" title="Facebook"    href="#"><i class="icon-facebook-2"></i></a></li>
                 <li><a class="twitter sh-tooltip"  data-placement="bottom" title="Twitter"     href="#"><i class="icon-twitter-2" ></i></a></li>
                 <li><a class="google sh-tooltip"   data-placement="bottom" title="Google Plus" href="#"><i class="icon-gplus"     ></i></a></li>
-                <li><a class="linkdin sh-tooltip"  data-placement="bottom" title="Linkedin"    href="#"><i class="icon-linkedin"  ></i></a></li>
               </ul>
             </div>
 
@@ -60,41 +59,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <i class="icon-menu-1"></i>
             </button>
-            <a class="navbar-brand" href="index.html"><img alt="" src="images/venda.png"></a>
-          </div>
-
-          <!-- Collapse -->
-          <div class="navbar-collapse collapse">
-
-            <!-- Stat Search -->
-            <div class="search-side">
-              <a href="#" class="show-search"><i class="icon-search-1"></i></a>
-              <div class="search-form">
-                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                  <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                </form>
-              </div>
-            </div>
-
-            <!-- Start Navigation List -->
-            <ul class="nav navbar-nav navbar-right">
-
-              <li>
-                <a href="#/home" translation>Home</a>
-              </li>
-
-              <li>
-                <a class="{active" href="#/presentation" translation>Presentation</a>
-              </li>
-
-              <li>
-                <a href="#/blog" translation>Blog</a>
-              </li>
-
-              <li><a href="#/contact" translation>Contact</a></li>
-            </ul>
-            <!-- End Navigation List -->
-
+            <a class="navbar-brand" href="index.html"><img alt="" src="images/Avatar_Lupo-Libero_Facebook.png"></a>
           </div>
           <!-- End Collapse -->
 
@@ -105,26 +70,13 @@
     </header>
     <!-- End Header -->
 
-    <!-- Start Page Banner -->
-    <div class="page-banner no-subtitle">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10">
-            <h2>{{ title }}</h2>
-          </div>
-          <div class="col-md-2">
-            <breadcrumb></breadcrumb>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Start Content -->
     <div id="content">
       <div class="container">
         <div class="row">
           <!-- Page Content -->
-          <div class="page-content" ng-view></div>
+          <div class="page-content" ng-include="'home.html'"></div>
         </div>
       </div>
     </div>

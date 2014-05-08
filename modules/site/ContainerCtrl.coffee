@@ -13,11 +13,6 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location)->
     $rootScope.$broadcast('$ChangeLanguage', 'en')
   )
 
-  # If the language doesn't exist on the database
-  $rootScope.$on('$translateChangeError', ->
-    $translate.use('en')
-  )
-
   unless $rootScope.$storage.facebook?
     $rootScope.$storage.facebook = false
   unless $rootScope.$storage.twitter?

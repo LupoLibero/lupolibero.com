@@ -23,18 +23,29 @@ exports.blogpost_all = {
   map: function(doc) {
     var translation = require('views/lib/translation').translation;
     if(doc.type && doc.type == 'blogpost'){
-      translation.emitTranslatedDoc(
-        [translation._keyTag, doc._id],
-        {
-          id:           doc.id,
-          created_at:   doc.created_at,
-          author:       doc.author,
-          short:        doc.short,
-          slug:         doc.slug,
-          title:        doc.title
-        },
-        {long: true, short:true, slug: true, title: true}
-      );
+      langs = ['en', 'fr']
+      for(i in langs) {
+        lang = langs[i]
+        if(doc.title.hasOwnProperty(lang)) {
+          emit(
+            [lang, doc._id],
+            {
+              id:           doc.id,
+              created_at:   doc.created_at,
+              author:       doc.author,
+              short:        doc.short[lang] || '',
+              slug:         doc.slug[lang]  || '',
+              title:        doc.title[lang] || {},
+              lang:         lang,
+            }
+          );
+        } else {
+          emit(
+            [lang, doc._id],
+            {}
+          );
+        }
+      }
     }
   }
 }

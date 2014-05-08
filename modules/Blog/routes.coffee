@@ -33,13 +33,13 @@ config( ($stateProvider) ->
       }
     })
     .state('blogpost', {
-      url:         '/blog/:blogpostId'
+      url:         '/blog/:slug'
       templateUrl: './partials/Blog/show.html'
       controller:  'BlogpostCtrl'
       resolve: {
         blogpost: (Blogpost, $stateParams) ->
           return Blogpost.get({
-            key: $stateParams.blogpostId
+            key: $stateParams.slug
           })
       }
     })

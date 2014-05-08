@@ -2,7 +2,7 @@ angular.module('blog').
 config( ($stateProvider) ->
   $stateProvider
     .state('blog', {
-      url:         '/blog'
+      url:         '/blog?page'
       templateUrl: './partials/Blog/list.html'
       controller:  'BlogpostListCtrl'
       resolve: {
@@ -20,7 +20,7 @@ config( ($stateProvider) ->
             limit:      10
             skip:       page*10
           })
-        blogpostListDefault: (Blogpost, $stateParams) ->
+        blogpostListDefault: (Blogpost, $stateParams, $state) ->
           page =  $stateParams.page ? 1
           page--
           return Blogpost.all({
@@ -38,9 +38,8 @@ config( ($stateProvider) ->
       controller:  'BlogpostCtrl'
       resolve: {
         blogpost: (Blogpost, $stateParams) ->
-          lang = window.navigator.language
-          return Blogpost.all({
-            key: [$stateParams.blogpostId, lang]
+          return Blogpost.get({
+            key: $stateParams.blogpostId
           })
       }
     })

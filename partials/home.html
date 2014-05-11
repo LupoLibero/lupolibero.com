@@ -13,10 +13,42 @@
                     	<!-- SLIDE 1 -->
                         <li data-transition="fade" data-slotamount="7" data-masterspeed="300" >
                             <!-- MAIN IMAGE -->
-                            <img src="images/Bandeau_Lupo-Libero_Facebook.png" data-fullwidthcentering="on" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                            <img src="images/slide1_background.png" data-fullwidthcentering="on" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
+                            <div class="tp-caption sfl start"
+                                data-x="center"
+                                data-y="center"
+
+                                data-speed="1000"
+                                data-start="500"
+                                data-easing="Power1.easeOut"><img src="images/slide1_logo.png" alt="" />
+                            </div>
+
+                            <div class="tp-caption sfl start"
+                                data-x="center"
+                                data-y="405"
+
+                                data-speed="1000"
+                                data-start="1500"
+                                data-easing="Power1.easeOut"><img src="images/slide1_baseline-en.png" alt="" />
+                            </div>
                         </li>
 
+                        <!-- SLIDE 2  -->
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="300" >
+                            <!-- MAIN IMAGE -->
+                            <img src="images/slide2_background.png" data-fullwidthcentering="on" alt="slidebg2"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+                            <div class="tp-caption sfl start"
+                                data-x="center"
+                                data-y="bottom"
+
+                                data-speed="1000"
+                                data-start="1000"
+                                data-easing="Power1.easeOut"><img src="images/slide1_baseline-en.png" alt="" />
+                            </div>
+
+                          </li>
 
                     </ul>
                     <div class="tp-bannertimer" style="visibility:hidden;"></div>
@@ -124,7 +156,7 @@
                         <!-- Start Service Icon 3 -->
                         <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
                             <div class="service-icon">
-                                <i class="icon-droplet icon-medium"></i>
+                                <img src="images/open_icone.png"/>
                             </div>
                             <div class="service-content">
                                 <h4>Retina Display Ready</h4>
@@ -204,7 +236,7 @@
             <div class="section">
               <button ng-click="$storage.facebook = !$storage.facebook">Allow</button>
               <div ng-if="$storage.facebook">
-              <div class="fb-like" data-href="https://www.facebook.com/lupolibero.net" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-like" data-href="https://www.facebook.com/lupolibero.net" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 <div id="fb-root"></div>
               </div>
               <facebook-sdk ng-if="$storage.facebook"></facebook-sdk>

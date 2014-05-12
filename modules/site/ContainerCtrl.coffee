@@ -3,10 +3,14 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
+  $rootScope.$on('$stateChangeStart', ($event, to)->
+    $scope.title = to.name
+    $('#loader').fadeIn()
+  )
   $rootScope.$on('$stateChangeSuccess', ($event, to)->
     $scope.title = to.name
+    $('#loader').fadeOut()
   )
-
   $rootScope.$on('$stateChangeError', ($event, toState, toParams, fromState, fromParams, error)->
     console.log $event, toState, toParams, fromState, fromParams, error
   )

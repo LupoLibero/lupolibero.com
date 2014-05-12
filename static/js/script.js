@@ -1,11 +1,6 @@
 /* ----------------- Start JS Document ----------------- */
 var $ = jQuery.noConflict();
 
-// Page Loader
-$(window).load(function(){
-  $('#loader').fadeOut();
-});
-
 $(document).ready(function($) {
   "use strict";
   /*----------------------------------------------------*/

@@ -12,4 +12,6 @@ controller('HomeCtrl', ($scope, presentation, Notif) ->
     {id: "privacy", filename: "privacy_icone.png"},
     {id: "open", filename: "open_icone.png"},
   ]
+
+  $scope.numberFollower = follower.num
 )

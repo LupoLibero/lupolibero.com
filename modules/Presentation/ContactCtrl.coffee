@@ -1,6 +1,6 @@
 angular.module('presentation').
-controller('ContactCtrl', ($scope, presentation, Notif) ->
-  $scope.page        = presentation
+controller('ContactCtrl', ($scope, page, Notif) ->
+  $scope.page        = page
   $scope.form_action = ""
   $scope.contact     = {}
 

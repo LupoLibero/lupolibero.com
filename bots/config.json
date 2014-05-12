@@ -24,6 +24,14 @@
     "email_filename": "sponsors.xlsx",
     "search_term": "mail@sylvainduchesne.com",
     "worksheet": "Feuille1"
+  },
+
+  "twitter": {
+    "key":           "",
+    "secret":        "",
+    "token":         "",
+    "token_secret":  "",
+    "screen_name":   ""
   }
 
 }

@@ -155,15 +155,13 @@
             <div class="footer-widget twitter-widget">
               <h4>Twitter Feed<span class="head-line"></span></h4>
               <ul>
-
-                <li>
+                <li ng-repeat="tweet in tweets |orderBy:'+created_at'">
                   <p>
-                    <a href="#">@RoberdKS </a>
-                    Lorem ipsum dolor et, consectetur adipiscing eli.
+                    <a href="#">@{{tweet.author}}</a>
+                    {{tweet.text}}
                   </p>
-                  <span>29 September 2013</span>
+                  <span>{{tweet.created_at |date}}</span>
                 </li>
-
               </ul>
             </div>
           </div>

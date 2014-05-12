@@ -17,10 +17,14 @@ config( ($stateProvider) ->
       templateUrl: './partials/home.html'
       controller:  'HomeCtrl'
       resolve:
-        presentation: (Presentation) ->
+        page: (Presentation) ->
           pageName = 'home:en'
           return Presentation.getDoc({
             _id: pageName
+          })
+        follower: (Presentation) ->
+          return Presentation.getDoc({
+            _id: 'follower'
           })
     })
     .state('contact', {
@@ -28,7 +32,7 @@ config( ($stateProvider) ->
       templateUrl: './partials/contact.html'
       controller:  'ContactCtrl'
       resolve:
-        presentation: (Presentation) ->
+        page: (Presentation) ->
           pageName = 'contact:en'
           return Presentation.getDoc({
             _id: pageName

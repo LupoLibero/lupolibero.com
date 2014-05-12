@@ -1,7 +1,7 @@
 angular.module('presentation').
-controller('HomeCtrl', ($scope, presentation,? Notif, follower, Subscription, notification) ->
+controller('HomeCtrl', ($scope, page, Notif, follower, Subscription, notification) ->
   $scope.subscription = {}
-  $scope.page = presentation
+  $scope.page = page
 
   $scope.features = [
     {id: "secured_data", filename: "secured_data_icone.png"},
@@ -15,18 +15,4 @@ controller('HomeCtrl', ($scope, presentation,? Notif, follower, Subscription, no
   ]
 
   $scope.numberFollower = follower.num
-
-  $scope.subscribe = ->
-    Subscription.update({
-      update: 'create'
-
-      email: $scope.subscription.email
-      every: $scope.subscription.every
-    }).then(
-      (data)-> #Success
-        notification.addAlert('You have subscribe to the newsletter', 'success')
-        $scope.subscription = {}
-      ,(err)-> #Error
-        console.log err
-    )
 )

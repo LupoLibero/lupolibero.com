@@ -9,6 +9,7 @@ angular.module('site', [
   'comment'
   'ngSocial'
   'ngStorage'
+  'tweet'
 ])
 
 ng.value('db', {

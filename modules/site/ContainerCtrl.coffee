@@ -1,5 +1,5 @@
 angular.module('site').
-controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location)->
+controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet)->
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
@@ -26,4 +26,14 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location)->
 
   $scope.facebookCount = 43
   $scope.twitterCount = 2
+
+  Tweet.all({
+    limit: 4
+    descending: true
+  }).then(
+    (data)-> #Success
+      $scope.tweets = data
+    ,(err)-> #Error
+      console.log err
+  )
 )

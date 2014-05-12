@@ -25,7 +25,7 @@
 
                                 data-speed="1000"
                                 data-start="1500"
-                                data-easing="Power1.easeOut"><img src="images/slide1_baseline-en.png" alt="" />
+                                data-easing="Power1.easeOut"><img src="images/slide1_baseline-{{ langCode }}.png" alt="" />
                             </div>
                         </li>
 
@@ -118,103 +118,15 @@
 
                     <!-- Start Services Icons -->
                 	<div class="row">
-
-                        <!-- Start Service Icon 1 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
+                        <div ng-repeat="feature in features" class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
                             <div class="service-icon">
-                                <img src="images/secured_data_icone.png"/>
+                                <img src="images/{{ feature.filename }}"/>
                             </div>
                             <div class="service-content">
-                                <h4>Données Sécurisées</h4>
-            <p>Sécurité absolue à tous les niveaux : Envoie -&gt; Stockage -&gt; Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
+                                <h4>{{ page.features[feature.id].title }}</h4>
+                                <p>{{ page.features[feature.id].text }}</p>
                             </div>
                         </div>
-
-                        <!-- Start Service Icon 2 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="02">
-                            <div class="service-icon">
-                                <img src="images/devices_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Full Responsive</h4>
-            <p>Sécurité absolue à tous les niveaux : Envoie -&gt; Stockage -&gt; Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-
-                        <!-- Start Service Icon 3 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
-                            <div class="service-icon">
-                                <img src="images/open_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Retina Display Ready</h4>
-            <p>Sécurité absolue à tous les niveaux : Envoie -&gt; Stockage -&gt; Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 3 -->
-
-                        <!-- Start Service Icon 4 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
-                            <div class="service-icon">
-                                <img src="images/sync_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Clean Modern Code</h4>
-                <p>Sécurité absolue à tous les niveaux : Envoie -&gt; Stockage -&gt; Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 4 -->
-                    </div>
-
-                    <div class="row">
-                        <!-- Start Service Icon 5 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="05">
-                            <div class="service-icon">
-                                <img src="images/easy_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Fast & Light Theme</h4>
-                                <p>Sécurité absolue à tous les niveaux : Envoie -> Stockage -> Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 5 -->
-
-                        <!-- Start Service Icon 6 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="06">
-                            <div class="service-icon">
-                                <img src="images/share_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Css3 Transitions</h4>
-                                <p>Sécurité absolue à tous les niveaux : Envoie -> Stockage -> Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 6 -->
-
-                        <!-- Start Service Icon 7 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="07">
-                            <div class="service-icon">
-                                <img src="images/upload_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Free Updates</h4>
-                                <p>Sécurité absolue à tous les niveaux : Envoie -> Stockage -> Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 7 -->
-
-                        <!-- Start Service Icon 8 -->
-                        <div class="col-md-3 service-box service-center" data-animation="fadeIn" data-animation-delay="08">
-                            <div class="service-icon">
-                                <img src="images/privacy_icone.png"/>
-                            </div>
-                            <div class="service-content">
-                                <h4>Help & Support</h4>
-                                <p>Sécurité absolue à tous les niveaux : Envoie -> Stockage -> Récupération <a title="Simple Tooltip" href="#" class="sh-tooltip" data-placement="left" translation>Read More</a></p>
-                            </div>
-                        </div>
-                        <!-- End Service Icon 8 -->
-
                     </div>
                     <!-- End Services Icons -->
 

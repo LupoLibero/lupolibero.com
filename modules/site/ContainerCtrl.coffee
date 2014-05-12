@@ -16,6 +16,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   $rootScope.$on('$translateChangeError', ->
     $rootScope.$broadcast('$ChangeLanguage', 'en')
   )
+  $rootScope.langCode = window.navigator.language
 
   unless $rootScope.$storage.facebook?
     $rootScope.$storage.facebook = false

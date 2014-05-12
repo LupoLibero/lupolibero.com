@@ -46,6 +46,79 @@
     }
   },
   {
-    "_id": "home:en"
+    "_id": "home:en",
+    "title": "Home",
+    "features": {
+      "secured_data": {
+        "title": "Données Sécurisées",
+        "text": "Sécurité absolue à tous les niveaux :\nEnvoi -> Stockage -> Récupération"
+      },
+      "devices": {
+        "title": "Accessibilité",
+        "text": "Vos données accessibles partout sur tous les supports (PC/MAC, Tablette, Mobile...)"
+      },
+      "sync": {
+        "title": "Synchronisé",
+        "text": "Synchronisation automatique<br/>de vos données sur vos supports"
+      },
+      "easy": {
+        "title": "Facile d'utilisation",
+        "text": "Très facile à prendre en main. Utilisable par tous, sans aucune formation"
+      },
+      "share": {
+        "title": "Partage",
+        "text": "Partagez simplement vos données avec une ou plusieurs personnes"
+      },
+      "upload": {
+        "title": "Stockage Cloud",
+        "text": "Stockage simple et sécurisé de vos données sur le Cloud."
+      },
+      "privacy": {
+        "title": "Vie Privée Sécurisée",
+        "text": "Votre vie privée est enfin sécurisée.<br/>Vos échanges de données sont chiffrés"
+      },
+      "open": {
+        "title": "Logiciel libre",
+        "text": "Utilisez, étudiez, modifiez, partagez... c'est libre !"
+      }
+    }
+  },
+  {
+    "_id": "home:fr",
+    "title": "Accueil",
+    "features": {
+      "secured_data": {
+        "title": "Données Sécurisées",
+        "text": "Sécurité absolue à tous les niveaux :\nEnvoi -> Stockage -> Récupération"
+      },
+      "devices": {
+        "title": "Accessibilité",
+        "text": "Vos données accessibles partout sur tous les supports (PC/MAC, Tablette, Mobile...)"
+      },
+      "sync": {
+        "title": "Synchronisé",
+        "text": "Synchronisation automatique<br/>de vos données sur vos supports"
+      },
+      "easy": {
+        "title": "Facile d'utilisation",
+        "text": "Très facile à prendre en main. Utilisable par tous, sans aucune formation"
+      },
+      "share": {
+        "title": "Partage",
+        "text": "Partagez simplement vos données avec une ou plusieurs personnes"
+      },
+      "upload": {
+        "title": "Stockage Cloud",
+        "text": "Stockage simple et sécurisé de vos données sur le Cloud."
+      },
+      "privacy": {
+        "title": "Vie Privée Sécurisée",
+        "text": "Votre vie privée est enfin sécurisée.<br/>Vos échanges de données sont chiffrés"
+      },
+      "open": {
+        "title": "Logiciel libre",
+        "text": "Utilisez, étudiez, modifiez, partagez... c'est libre !"
+      }
+    }
   }
 ]

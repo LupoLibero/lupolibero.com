@@ -14,5 +14,6 @@ controller('HomeCtrl', ($scope, pageDefault, page, Notif, follower, Subscription
     {id: "open", filename: "open_icone.png"},
   ]
 
-  $scope.numberFollower = follower.num
+  $scope.numberFollower = follower.twitter
+  $scope.numberLikes    = follower.likes
 )

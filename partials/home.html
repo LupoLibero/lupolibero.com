@@ -139,7 +139,7 @@
   </div>
   <facebook-sdk ng-if="$storage.facebook"></facebook-sdk>
   <div ng-if="!$storage.facebook">
-    FB-grisé
+    FB-grisé {{likes}}
   </div>
 
   <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>

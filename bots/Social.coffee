@@ -1,6 +1,9 @@
 config   = require('./config.json').twitter
+page     = require('./config.json').facebook
+http     = require('http')
 Tweet    = require('./Model/Tweet')
 Post     = require('./Model/Post')
+Facebook = require('./Model/Facebook')
 Twitter  = new (require('twit'))({
   consumer_key:         config.key
   consumer_secret:      config.secret
@@ -32,6 +35,19 @@ Twitter.get('users/show', {
 }, (err, data, response)->
   Tweet.saveFollowers(data.followers_count)
 )
+
+http.request({
+  method: 'GET'
+  hostname: "graph.facebook.com"
+  port: 80
+  path: "/#{page}"
+}, (res)->
+  res.setEncoding('utf-8')
+  res.on('data', (body)->
+    body = JSON.parse(body)
+    Facebook.saveLikes(body.likes)
+  )
+).end()
 
 # Post.all().then(
 #   (data)-> #Success

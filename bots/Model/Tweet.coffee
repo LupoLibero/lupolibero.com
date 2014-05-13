@@ -8,6 +8,6 @@ module.exports = {
 
   saveFollowers: (number)=>
     return db.update('tweet_save_follower', 'follower', {
-      num: number
+      twitter: number
     })
 }

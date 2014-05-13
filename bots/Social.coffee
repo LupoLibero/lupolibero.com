@@ -14,7 +14,7 @@ Twitter  = new (require('twit'))({
 Twitter.get('statuses/user_timeline', {
   screen_name:     config.screen_name
   include_rt:      false
-  count:           4
+  count:           15
   exclude_replies: true
 }, (err, tweets, response)->
   for tweet in tweets

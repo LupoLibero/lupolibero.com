@@ -9,6 +9,7 @@ angular.module('site', [
   'comment'
   'ngSocial'
   'ngStorage'
+  'ngSanitize'
   'tweet'
 ])
 

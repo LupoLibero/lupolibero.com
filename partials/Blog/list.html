@@ -1,16 +1,12 @@
-<<<<<<< HEAD
-<!-- Start Blog Posts -->
-<div class="col-md-9 blog-box" ng-repeat="blogpost in blogpostList">
-
-  <!-- Start Post -->
-  <div class="blog-post image-post">
-    <!-- Post Thumb -->
-    <div class="post-head" ng-show="blogpost.image">
-      <a class="lightbox" title="{{ blogpost.title }}" href="http://placehold.it/1024x620/eee">
-        <div class="thumb-overlay"><i class="icon-resize-full"></i></div>
-        <img alt="{{ blogpost.image_alt }}" src="{{ blogpost.image }}"/>
-      </a>
-    </div>
+<!-- Start Post -->
+<div class="blog-post image-post" ng-repeat="blogpost in blogpostList">
+  <!-- Post Thumb -->
+  <div class="post-head" ng-show="blogpost.image">
+     <a class="lightbox" title="{{ blogpost.title }}" ui-sref="blogpost(blogpost)">
+      <div class="thumb-overlay"><i class="icon-resize-full"></i></div>
+      <img alt="{{ blogpost.image_alt }}" src="{{ blogpost.image }}"/>
+    </a>
+  </div>
   <!-- Post Content -->
   <div class="post-content">
     <div class="post-type"><i class="icon-picture-3"></i></div>

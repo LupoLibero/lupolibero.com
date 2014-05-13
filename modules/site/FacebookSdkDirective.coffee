@@ -1,14 +1,16 @@
 angular.module('site').
-directive('facebookSdk', ($document)->
+directive('facebookSdk', ->
   return {
     restrict: 'E'
     scope: {
-      ngIf: '='
+      if: '='
     }
     link: (scope, elem, attrs)->
-      scope.$watch('ngIf', (value)->
-        if value and $document.find('.facebook-jssdk').length == 0
+      scope.$watch('if', (value)->
+        if value
           $('body').append('<script class="facebook-jssdk" src="//connect.facebook.net/fr_FR/sdk.js"></script>')
+        else
+          $('.facebook-jssdk').remove()
       )
   }
 )

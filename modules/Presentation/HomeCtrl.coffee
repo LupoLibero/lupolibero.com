@@ -1,5 +1,5 @@
 angular.module('presentation').
-controller('HomeCtrl', ($scope, pageDefault, page, Notif, follower, Subscription, notification) ->
+controller('HomeCtrl', ($scope, pageDefault, page, Notif, Subscription, notification) ->
   $scope.subscription = {}
   $scope.page         = angular.extend(pageDefault, page)
 
@@ -13,7 +13,4 @@ controller('HomeCtrl', ($scope, pageDefault, page, Notif, follower, Subscription
     {id: "privacy", filename: "privacy_icone.png"},
     {id: "open", filename: "open_icone.png"},
   ]
-
-  $scope.numberFollower = follower.twitter
-  $scope.numberLikes    = follower.likes
 )

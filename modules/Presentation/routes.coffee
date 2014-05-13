@@ -43,9 +43,6 @@ config( ($stateProvider) ->
           )
           return defer.promise
         follower: (Presentation) ->
-          return Presentation.getDoc({
-            _id: 'follower'
-          })
     })
     .state('contact', {
       url:         '/contact'

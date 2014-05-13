@@ -42,6 +42,16 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
       console.log err
   )
 
+  Tweet.getDoc({
+    _id: 'follower'
+  }).then(
+    (data)-> #Success
+      $scope.numberFollower = data.twitter
+      $scope.numberLikes    = data.likes
+    ,(err)-> #Error
+      console.log err
+  )
+
   $scope.subscribe = ->
     Subscription.update({
       update: 'create'

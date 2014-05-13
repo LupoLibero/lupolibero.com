@@ -1,7 +1,7 @@
 angular.module('presentation').
-controller('HomeCtrl', ($scope, page, Notif, follower, Subscription, notification) ->
+controller('HomeCtrl', ($scope, pageDefault, page, Notif, follower, Subscription, notification) ->
   $scope.subscription = {}
-  $scope.page = page
+  $scope.page         = angular.extend(pageDefault, page)
 
   $scope.features = [
     {id: "secured_data", filename: "secured_data_icone.png"},

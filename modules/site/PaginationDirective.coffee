@@ -23,7 +23,10 @@ directive('paginationPage', ($location, $rootScope, $state)->
       )
 
       $rootScope.$on('$stateChangeSuccess', ->
-        scope.ngModel = $location.search().page ? 1
+        page = $location.search().page ? 1
+        if page != scope.ngModel
+          $('html, body').animate({scrollTop: 0}, 1000)
+          scope.ngModel = page
       )
   }
 )

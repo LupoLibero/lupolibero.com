@@ -9,6 +9,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   $rootScope.$on('$stateChangeSuccess', ($event, to)->
     $scope.title = to.name
     $('#loader').fadeOut()
+    $('html, body').animate({scrollTop: 0}, 800)
   )
   $rootScope.$on('$stateChangeError', ($event, toState, toParams, fromState, fromParams, error)->
     console.log $event, toState, toParams, fromState, fromParams, error

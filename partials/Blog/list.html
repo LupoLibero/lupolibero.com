@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Start Blog Posts -->
 <div class="col-md-9 blog-box" ng-repeat="blogpost in blogpostList">
 
@@ -10,21 +11,19 @@
         <img alt="{{ blogpost.image_alt }}" src="{{ blogpost.image }}"/>
       </a>
     </div>
-    <!-- Post Content -->
-    <div class="post-content">
-      <div class="post-type"><i class="icon-picture-3"></i></div>
-      <h2><a ng-href="#/blog/{{ blogpost.slug }}">{{ blogpost.title }}</a></h2>
-      <ul class="post-meta">
-        <li>By {{ blogpost.author }}</li>
-        <li>{{ blogpost.created_at |date }}</li>
-        <li><a translate translate-n="comment.length" translate-plural="{{comment.length}} Comments">{{comment.length}} Comment</a></li>
-      </ul>
-        <p>{{ blogpost.short }}</p>
-        <a class="main-button" ui-sref="blogpost(blogpost)">Read More <i class="icon-right-small"></i></a>
-    </div>
+  <!-- Post Content -->
+  <div class="post-content">
+    <div class="post-type"><i class="icon-picture-3"></i></div>
+    <h2><a ng-href="#/blog/{{ blogpost.slug }}">{{ blogpost.title }}</a></h2>
+    <ul class="post-meta">
+      <li>By {{ blogpost.author }}</li>
+      <li>{{ blogpost.created_at |date }}</li>
+      <li><a translate translate-n="comment.length" translate-plural="{{comment.length}} Comments">{{comment.length}} Comment</a></li>
+    </ul>
+      <p>{{ blogpost.short }}</p>
+      <a class="main-button" ui-sref="blogpost(blogpost)">Read More <i class="icon-right-small"></i></a>
   </div>
-  <!-- End Post -->
 </div>
-<!-- End Blog Posts -->
+<!-- End Post -->
 
-<pagination total-items="page.max" ng-model="page.actual"></pagination>
+<pagination-page item-per-page="10" total-items="page.max" ng-model="page.actual"></pagination-page>

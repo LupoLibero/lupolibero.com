@@ -6,10 +6,20 @@ config( ($stateProvider) ->
       templateUrl: './partials/presentation.html'
       controller:  'PresentationCtrl'
       resolve:
-        page: (Presentation) ->
-          pageName = 'presentation:en'
+        page: (Presentation, $q) ->
+          defer = $q.defer()
           return Presentation.getDoc({
-            _id: pageName
+            _id: "presentation:#{window.navigator.language}"
+          }).then(
+            (data)-> #Success
+              defer.resolve(data)
+            ,(err)-> #Error
+              defer.resolve({})
+          )
+          return defer.promise
+        pageDefault: (Presentation) ->
+          return Presentation.getDoc({
+            _id: "presentation:en"
           })
     })
     .state('home', {
@@ -17,11 +27,21 @@ config( ($stateProvider) ->
       templateUrl: './partials/home.html'
       controller:  'HomeCtrl'
       resolve:
-        page: (Presentation) ->
-          pageName = 'home:en'
+        pageDefault: (Presentation) ->
           return Presentation.getDoc({
-            _id: pageName
+            _id: 'home:en'
           })
+        page: (Presentation, $q) ->
+          defer = $q.defer()
+          return Presentation.getDoc({
+            _id: "home:#{window.navigator.language}"
+          }).then(
+            (data)-> #Success
+              defer.resolve(data)
+            ,(err)-> #Error
+              defer.resolve({})
+          )
+          return defer.promise
         follower: (Presentation) ->
           return Presentation.getDoc({
             _id: 'follower'
@@ -32,10 +52,20 @@ config( ($stateProvider) ->
       templateUrl: './partials/contact.html'
       controller:  'ContactCtrl'
       resolve:
-        page: (Presentation) ->
-          pageName = 'contact:en'
+        pageDefault: (Presentation) ->
           return Presentation.getDoc({
-            _id: pageName
+            _id: 'contact:en'
           })
+        page: (Presentation, $q) ->
+          defer = $q.defer()
+          return Presentation.getDoc({
+            _id: "contact:#{window.navigator.language}"
+          }).then(
+            (data)-> #Success
+              defer.resolve(data)
+            ,(err)-> #Error
+              defer.resolve({})
+          )
+          return defer.promise
     })
 )

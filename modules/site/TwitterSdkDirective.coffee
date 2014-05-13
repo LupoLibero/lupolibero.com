@@ -1,9 +1,9 @@
 angular.module('site').
-directive('twitterSdk', ($location, $document)->
+directive('twitterSdk', ($location)->
   return {
     restrict: 'E'
     scope: {
-      ngIf: '='
+      if: '='
     }
     link: (scope, elem, attrs)->
       if /^http:/.test($location.absUrl())
@@ -11,9 +11,11 @@ directive('twitterSdk', ($location, $document)->
       else
         p = "https"
 
-      scope.$watch('ngIf', (value)->
-        if value and $document.find('.twitter-wjs').length == 0
+      scope.$watch('if', (value)->
+        if value
           $('body').append("""<script class="twitter-wjs" src="#{p}://platform.twitter.com/widgets.js"></script>""")
+        else
+          $('.twitter-wjs').remove()
       )
   }
 )

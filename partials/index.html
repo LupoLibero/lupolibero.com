@@ -52,10 +52,10 @@
             <!-- Start Social Links -->
             <div class="col-md-6">
               <ul class="social-list">
-                <li><a class="facebook sh-tooltip" data-placement="bottom" title="Facebook"    href="#"><i class="icon-facebook-2"></i></a></li>
-                <li><a class="twitter sh-tooltip"  data-placement="bottom" title="Twitter"     href="#"><i class="icon-twitter-2" ></i></a></li>
-                <li><a class="google sh-tooltip"   data-placement="bottom" title="Google Plus" href="#"><i class="icon-gplus"     ></i></a></li>
-                <li><a class="linkdin sh-tooltip"  data-placement="bottom" title="Linkedin"    href="#"><i class="icon-linkedin"  ></i></a></li>
+                <li><a class="facebook sh-tooltip" data-placement="bottom" title="Facebook"    href="http://facebook.com/lupolibero.net"><i class="icon-facebook-2"></i></a></li>
+                <li><a class="twitter sh-tooltip"  data-placement="bottom" title="Twitter"     href="https://twitter.com/lupo_libero"><i class="icon-twitter-2" ></i></a></li>
+                <!-- <li><a class="google sh-tooltip"   data-placement="bottom" title="Google Plus" href="#"><i class="icon-gplus"     ></i></a></li> -->
+                <!-- <li><a class="linkdin sh-tooltip"  data-placement="bottom" title="Linkedin"    href="#"><i class="icon-linkedin"  ></i></a></li> -->
               </ul>
             </div>
 
@@ -129,6 +129,26 @@
           <!-- Page Content -->
           <notification-overlay></notification-overlay>
           <div class="page-content" ui-view></div>
+          <div class="section">
+            <button ng-click="$storage.facebook = !$storage.facebook">Allow</button>
+            <div ng-if="$storage.facebook">
+              <div id="fb-root"></div>
+              <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+            </div>
+            <facebook-sdk if="$storage.facebook"></facebook-sdk>
+            <div ng-if="!$storage.facebook">
+              FB-grisé {{ numberLikes }}
+            </div>
+
+            <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>
+            <div ng-if="$storage.twitter">
+              <a data-show-count href="https://twitter.com/lupo_libero" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lupo_libero</a>
+            </div>
+            <twitter-sdk if="$storage.twitter"></twitter-sdk>
+            <div ng-if="!$storage.twitter">
+              Twitter-grisé {{ numberFollower }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -158,7 +178,7 @@
               <ul>
                 <li ng-repeat="tweet in tweets |orderBy:'+created_at'">
                   <p>
-                    <a href="#">@{{tweet.author}}</a>
+                    <a ng-href="https://twitter.com/{{tweet.author}}">@{{tweet.author}}</a>
                     {{tweet.text}}
                   </p>
                   <span>{{tweet.created_at |date}}</span>
@@ -212,6 +232,16 @@
       <div class="dot2"></div>
     </div>
   </div>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '869191793096489',
+        xfbml      : true,
+        version    : 'v2.0'
+      });
+    };
+  </script>
 
   <!-- Jquery -->
   <script src="vendor/jquery/dist/jquery.js                             "></script>

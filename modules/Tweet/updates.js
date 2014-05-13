@@ -11,7 +11,7 @@ exports.tweet_save = function(doc, req) {
 exports.tweet_save_follower = function(doc, req) {
   var form = JSON.parse(req.body);
   if(doc !== null) {
-    doc.num = form.num;
+    doc.twitter = form.twitter;
     return [doc, 'ok'];
   }
   throw({forbidden: 'Doc must not be null'});

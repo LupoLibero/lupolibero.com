@@ -32,6 +32,8 @@
     "token":         "",
     "token_secret":  "",
     "screen_name":   ""
-  }
+  },
+
+  "facebook": ""
 
 }

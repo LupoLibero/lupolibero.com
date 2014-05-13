@@ -1,6 +1,7 @@
 [
   {
     "_id": "follower",
-    "num": 0
+    "twitter": 0,
+    "likes": 0
   }
 ]

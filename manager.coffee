@@ -192,23 +192,23 @@ botsPush = (env) ->
     (if user then "-u " + user + " " else '') +
     "--limit " + env + " --tags deploy -K"
   ).then(->
-    url = getUrlFromEnv(env)
-    callCommand(format("coffee bots/external_tools %s", url))
+    getUrlFromEnv(env).then (url)->
+      callCommand(format("coffee bots/external_tools %s", url))
   )
 
 # Reload the application in the db
 appPush = (envOrUrl) ->
   deferred = Q.defer()
-  url = getUrlFromEnv(envOrUrl)
-  console.log "node manager.js app push", urlWithoutCredentials(url)
-  callCommand(format("kanso push %s", url))
+  getUrlFromEnv(envOrUrl).then (url)->
+    console.log "node manager.js app push", urlWithoutCredentials(url)
+    callCommand(format("kanso push %s", url))
 
 # Clone the production db
 appInit = (envOrUrl) ->
   deferred = Q.defer()
-  url = getUrlFromEnv(envOrUrl)
-  console.log "node manager.js app init", urlWithoutCredentials(url)
-  callCommand(format("kanso replicate %s %s", PROD_DB_URL, url))
+  getUrlFromEnv(envOrUrl).then (url)->
+    console.log "node manager.js app init", urlWithoutCredentials(url)
+    callCommand(format("kanso replicate %s %s", PROD_DB_URL, url))
 
 registerVhost = (env, domainName) ->
   getUrlFromEnv(env).then (dbUrl)->

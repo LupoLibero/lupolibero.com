@@ -4,8 +4,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   $rootScope.$location = $location
 
   $rootScope.$on('$stateChangeStart', ($event, to)->
-    $scope.title = to.name
-    $('#loader').fadeIn()
+    $('#loader').fadeIn(150)
   )
   $rootScope.$on('$stateChangeSuccess', ($event, to)->
     $scope.title = to.name

@@ -1,5 +1,6 @@
 angular.module('presentation').
-controller('HomeCtrl', ($scope, pageDefault, page, Notif, Subscription, notification) ->
+controller('HomeCtrl', ($scope, pageDefault, page, Notif, Subscription, notification, indiegogo) ->
+  $scope.indiegogo    = indiegogo
   $scope.subscription = {}
   $scope.page         = angular.extend(pageDefault, page)
 

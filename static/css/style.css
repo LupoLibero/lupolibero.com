@@ -5105,3 +5105,24 @@ ul.footer-nav li a:hover {
 .switcher-box .open-switcher i {
 	display: none;
 }
+
+
+/* Indiegogo */
+.indiegogo {
+  background-color: #F3F3F3;
+  margin: 25px;
+  padding: 15px;
+  text-align: center;
+}
+
+.progress-bar-container {
+  border: 1px solid #DDD;
+  width: 300px;
+  height: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  font-weight: 700
+}

@@ -185,3 +185,12 @@
 </div>
 <!-- End Full Width Section 1 -->
 
+<div class="section indiegogo">
+  <h2 translate>Indiegogo Campaign</h2>
+  <h3>{{indiegogo.actual}}/{{indiegogo.max}}</h3>
+  <p translate translate-n="indiegogo.contributor" translate-plural="with {{indiegogo.contributor}} contributors">with {{indiegogo.contributor}} contributor</p>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{indiegogo.percentage}};">{{indiegogo.percent}}</div>
+  </div>
+</div>

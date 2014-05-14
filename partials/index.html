@@ -127,30 +127,46 @@
     <!-- Start Content -->
     <div id="content">
       <div class="container">
-        <div class="row">
-          <!-- Page Content -->
-          <notification-overlay></notification-overlay>
-          <div class="page-content" ui-view></div>
-          <div class="section">
-            <button ng-click="$storage.facebook = !$storage.facebook">Allow</button>
-            <div ng-if="$storage.facebook">
+        <!-- Page Content -->
+        <notification-overlay></notification-overlay>
+        <div class="page-content" ui-view></div>
+        <div class="section">
+
+          <div class="social-button">
+            <button class="btn btn-link pull-left" ng-click="$storage.facebook=!$storage.facebook">
+              <img ng-hide="$storage.facebook" src="images/switch_button_off.png" alt="switch facebook" />
+              <img ng-show="$storage.facebook" src="images/switch_button_on.png"  alt="switch facebook" />
+            </button>
+
+            <div ng-show="$storage.facebook">
               <div id="fb-root"></div>
-              <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-            </div>
-            <facebook-sdk if="$storage.facebook"></facebook-sdk>
-            <div ng-if="!$storage.facebook">
-              FB-grisé {{ numberLikes }}
+              <div class="fb-like" data-href="{{ $location.absUrl() }}" data-layout="button_count"
+                    data-action="like" data-show-faces="true" data-share="false"></div>
             </div>
 
-            <button ng-click="$storage.twitter = !$storage.twitter">Allow</button>
-            <div ng-if="$storage.twitter">
-              <a data-show-count href="https://twitter.com/lupo_libero" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lupo_libero</a>
+            <facebook-sdk if="$storage.facebook"></facebook-sdk>
+            <div ng-hide="$storage.facebook">
+              FB-grisé {{ numberLikes }}
             </div>
+          </div>
+
+          <div class="social-button">
+            <button class="btn btn-link pull-left" ng-click="$storage.twitter=!$storage.twitter">
+              <img ng-hide="$storage.twitter" src="images/switch_button_off.png" alt="switch twitter" />
+              <img ng-show="$storage.twitter" src="images/switch_button_on.png"  alt="switch twitter" />
+            </button>
+
+            <div ng-if="$storage.twitter" class="pull-left">
+              <a data-show-count href="https://twitter.com/lupo_libero" class="twitter-follow-button"
+                data-show-count="false" data-size="large" data-dnt="true">Follow @lupo_libero</a>
+            </div>
+
             <twitter-sdk if="$storage.twitter"></twitter-sdk>
-            <div ng-if="!$storage.twitter">
+            <div ng-if="!$storage.twitter" style="height: 25px">
               Twitter-grisé {{ numberFollower }}
             </div>
           </div>
+
         </div>
       </div>
     </div>

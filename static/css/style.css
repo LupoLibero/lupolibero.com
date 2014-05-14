@@ -1,13 +1,3 @@
-/* CSS Document */
-
-/*
-	Theme Name: Venda
-	Description: Venda - Responsive Template
-	Version: 1.0
-	Author: ZoOm-Arts
-	Website: http://zoom-arts.com
-*/
-
 /* ------------------------------------------ */
 /*             TABLE OF CONTENTS
 /* ------------------------------------------ */
@@ -24,16 +14,42 @@
 /*   11 - Footer Styles 		   */
 /*   12 - Plugins Styles 	  	   */
 
-
-
-
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-
-
-
-
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../font/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), url(../font/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../font/OpenSans-Semibold.ttf);
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../font/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(../font/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), url(../font/Lora-Italic.ttf);
+}
 
 /*------------------------------------------*/
 /*	     01 - General & Basic Styles
@@ -41,7 +57,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-    line-height: 21px;
+  line-height: 21px;
 	font-weight: 300;
 	color: #888;
 	background: url(../images/patterns/12.png) fixed repeat;
@@ -60,23 +76,23 @@ ul, ol {
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: #444;
+  color: #444;
 }
 
 a, a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 i {
@@ -91,45 +107,67 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 24px;
+  font-size: 24px;
 	line-height: 30px;
 }
 
 h2 {
-    font-size: 22px;
+  font-size: 22px;
 	line-height: 28px;
 }
 
 h3 {
-    font-size: 18px;
+  font-size: 18px;
 	line-height: 24px;
 }
 
 h4 {
-    font-size: 16px;
+  font-size: 16px;
 	line-height: 22px;
 }
 
 h5 {
-    font-size: 14px;
-	line-height: 20px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 h6 {
-    font-size: 12px;
-	line-height: 18px;
+  font-size: 12px;
+line-height: 18px;
 }
 
 p {
-    color: #888;
-    font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 22px;
-    margin: 0;
+  color: #888;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 22px;
+  margin: 0;
 }
 
 .social-button {
   height: 40px;
+}
+
+.social-count {
+  display: inline-block;
+  height: 18px;
+  line-height: 19px;
+  position: relative;
+  top: 3.5px;
+  left: -6px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border-top: 1.2px solid #DDD;
+  border-right: 1.2px solid #DDD;
+  border-bottom: 1.2px solid #DDD;
+
+  border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
 p strong {
@@ -1037,15 +1075,15 @@ input[type="submit"] {
 }
 
 .tp-caption.boldest_font_weight {
-	font-weight: 900;
+	font-weight: 800;
 }
 
 .tp-caption.bold_font_weight {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .tp-caption.regular_font_weight {
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .tp-caption.light_font_weight {
@@ -2453,11 +2491,15 @@ ul.icons-list li i {
 
 .service-box {
 	margin-bottom: 35px;
-	height: 150px;
+	height: 160px;
 }
 
 .service-center {
 	text-align: center;
+}
+
+.service-icon {
+  height: 60px;
 }
 
 .service-icon-left .service-icon {

@@ -30,13 +30,14 @@ Twitter.get('statuses/user_timeline', {
         text:       tweet.text
         img:        tweet.user.profile_image_url
       }
-      Tweet.save(tweet)
+      Tweet.save(tweet).done()
 )
 
 Twitter.get('users/show', {
   screen_name: config.screen_name
 }, (err, data, response)->
-  Tweet.saveFollowers(data.followers_count)
+  console.log err
+  Tweet.saveFollowers(data.followers_count).done()
 )
 
 http.request({
@@ -50,9 +51,8 @@ http.request({
   else
     res.setEncoding('utf-8')
     res.on('data', (body)->
-      try
-        body = JSON.parse(body)
-      Facebook.saveLikes(body.likes)
+      body = JSON.parse(body)
+      Facebook.saveLikes(body.likes).done()
     )
 ).end()
 
@@ -64,3 +64,8 @@ http.request({
 #   ,(err)-> #Error
 #     console.log err
 # )
+
+process.on 'uncaughtException', (err) ->
+  console.error('An uncaughtException was found, the program will end.')
+  console.error(err)
+  process.exit(1)

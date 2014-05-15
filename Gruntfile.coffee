@@ -68,6 +68,7 @@ module.exports = (grunt) ->
         cwd: 'static/css/'
         src: [
           '*.css'
+          '**/*.css'
           '!*.min.css'
         ]
         dest: 'static/compress/css/',

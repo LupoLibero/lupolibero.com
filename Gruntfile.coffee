@@ -28,6 +28,65 @@ module.exports = (grunt) ->
           ]
       }
     }
+    uglify: {
+      options:
+        report: 'gzip'
+        mangle: false
+      js: {
+        files: [{
+          expand: true
+          cwd: 'static/js'
+          src: [
+            '*.js'
+            'dist/*.js'
+          ]
+          dest: 'static/compress/js'
+        }]
+      }
+      vendor: {
+        files: [{
+          expand: true
+          cwd: 'static/vendor'
+          filter: 'isFile'
+          src: [
+            '**/*.js'
+            '**/GruntFile.js'
+            '!**/*.min.js'
+            '!**/src/**/*.js'
+            '!**/test/**/*.js'
+          ]
+          dest: 'static/compress/vendor'
+        }]
+      }
+    }
+    cssmin: {
+      options:
+        report: 'gzip'
+      minify: {
+        expand: true
+        filter: 'isFile'
+        cwd: 'static/css/'
+        src: [
+          '*.css'
+          '!*.min.css'
+        ]
+        dest: 'static/compress/css/',
+      }
+    }
+    imagemin: {
+      static: {
+        options:
+          optimizationLevel: 7
+          interlaced: true
+          progressive: true
+        files: [{
+          expand: true
+          cwd: './static/images/'
+          src: ['**/*.{png,jpg,gif}']
+          dest: 'static/compress/images'
+        }]
+      }
+    },
     # Kanso
     shell:{
       options:
@@ -64,4 +123,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask('default', [
     'watch'
+  ])
+
+  grunt.registerTask('prod', [
+    'uglify'
+    'cssmin'
+    'imagemin'
   ])

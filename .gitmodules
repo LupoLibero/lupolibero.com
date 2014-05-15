@@ -2,10 +2,6 @@
 	path = modules/Translation
 	url = https://github.com/LupoLibero/couch-ng-Translation
 	branch = master
-[submodule "modules/dbSelect"]
-	path = modules/dbSelect
-	url = https://github.com/LupoLibero/couch-ng-dbSelect
-	branch = master
 [submodule "modules/Breadcrumb"]
 	path = modules/Breadcrumb
 	url = https://github.com/LupoLibero/couch-ng-Breadcrumb

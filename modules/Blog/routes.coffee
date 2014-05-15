@@ -3,7 +3,7 @@ config( ($stateProvider) ->
   $stateProvider
     .state('blog', {
       url:         '/blog?page'
-      templateUrl: './partials/Blog/list.html'
+      templateUrl: 'partials/Blog/list.html'
       controller:  'BlogpostListCtrl'
       resolve: {
         post_max: (Blogpost) ->
@@ -34,7 +34,7 @@ config( ($stateProvider) ->
     })
     .state('blogpost', {
       url:         '/blog/:slug'
-      templateUrl: './partials/Blog/show.html'
+      templateUrl: 'partials/Blog/show.html'
       controller:  'BlogpostCtrl'
       resolve: {
         blogpost: (Blogpost, $stateParams) ->

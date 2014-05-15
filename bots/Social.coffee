@@ -17,17 +17,20 @@ Twitter.get('statuses/user_timeline', {
   count:           15
   exclude_replies: true
 }, (err, tweets, response)->
-  for tweet in tweets
-    date = tweet.created_at.split(' ')
-    date = "#{date[0]}, #{date[2]} #{date[1]} #{date[5]} #{date[3]}"
-    tweet = {
-      id:         tweet.id
-      created_at: date
-      author:     tweet.user.screen_name
-      text:       tweet.text
-      img:        tweet.user.profile_image_url
-    }
-    Tweet.save(tweet)
+  if err
+    console.log err
+  else
+    for tweet in tweets
+      date = tweet.created_at.split(' ')
+      date = "#{date[0]}, #{date[2]} #{date[1]} #{date[5]} #{date[3]}"
+      tweet = {
+        id:         tweet.id
+        created_at: date
+        author:     tweet.user.screen_name
+        text:       tweet.text
+        img:        tweet.user.profile_image_url
+      }
+      Tweet.save(tweet)
 )
 
 Twitter.get('users/show', {
@@ -41,13 +44,18 @@ http.request({
   hostname: "graph.facebook.com"
   port: 80
   path: "/#{page}"
-}, (res)->
-  res.setEncoding('utf-8')
-  res.on('data', (body)->
-    body = JSON.parse(body)
-    Facebook.saveLikes(body.likes)
-  )
+}, (res, err)->
+  if err
+    console.log err
+  else
+    res.setEncoding('utf-8')
+    res.on('data', (body)->
+      try
+        body = JSON.parse(body)
+      Facebook.saveLikes(body.likes)
+    )
 ).end()
+
 
 # Post.all().then(
 #   (data)-> #Success

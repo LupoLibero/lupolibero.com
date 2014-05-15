@@ -3,7 +3,7 @@ config( ($stateProvider) ->
   $stateProvider
     .state('presentation', {
       url:         '/presentation'
-      templateUrl: './partials/presentation.html'
+      templateUrl: 'partials/presentation.html'
       controller:  'PresentationCtrl'
       resolve:
         page: (Presentation, $q) ->
@@ -24,7 +24,7 @@ config( ($stateProvider) ->
     })
     .state('home', {
       url:         '/home'
-      templateUrl: './partials/home.html'
+      templateUrl: 'partials/home.html'
       controller:  'HomeCtrl'
       resolve:
         pageDefault: (Presentation) ->
@@ -49,7 +49,7 @@ config( ($stateProvider) ->
     })
     .state('contact', {
       url:         '/contact'
-      templateUrl: './partials/contact.html'
+      templateUrl: 'partials/contact.html'
       controller:  'ContactCtrl'
       resolve:
         pageDefault: (Presentation) ->

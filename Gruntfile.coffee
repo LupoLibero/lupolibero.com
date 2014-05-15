@@ -62,6 +62,18 @@ module.exports = (grunt) ->
     cssmin: {
       options:
         report: 'gzip'
+      vendor: {
+        expand: true
+        filter: 'isFile'
+        cwd: 'static/vendor/'
+        src: [
+          '*.css'
+          '**/*.css'
+          '!**/src/{,*/}*.css'
+          '!*.min.css'
+        ]
+        dest: 'static/compress/vendor/',
+      }
       minify: {
         expand: true
         filter: 'isFile'

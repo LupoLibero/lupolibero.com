@@ -1,6 +1,5 @@
 angular.module('site', [
   'ui.router'
-  'dbSelect'
   'gettext'
   'ngCouchDB'
   'presentation'

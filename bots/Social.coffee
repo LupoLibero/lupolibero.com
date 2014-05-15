@@ -17,6 +17,7 @@ Twitter.get('statuses/user_timeline', {
   count:           15
   exclude_replies: true
 }, (err, tweets, response)->
+  console.log err
   for tweet in tweets
     date = tweet.created_at.split(' ')
     date = "#{date[0]}, #{date[2]} #{date[1]} #{date[5]} #{date[3]}"
@@ -33,6 +34,7 @@ Twitter.get('statuses/user_timeline', {
 Twitter.get('users/show', {
   screen_name: config.screen_name
 }, (err, data, response)->
+  console.log err
   Tweet.saveFollowers(data.followers_count)
 )
 

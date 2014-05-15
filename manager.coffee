@@ -201,7 +201,7 @@ appPush = (envOrUrl) ->
   deferred = Q.defer()
   getUrlFromEnv(envOrUrl).then (url)->
     console.log "node manager.js app push", urlWithoutCredentials(url)
-    callCommand(format("kanso push %s --minify", url))
+    callCommand(format("kanso push %s", url))
 
 # Clone the production db
 appInit = (envOrUrl) ->

@@ -16,8 +16,8 @@
   },
 
   "notification_manager": {
-    "name": "notification",
-    "pass": "notification"
+    "name": "{{ bots_user.name }}",
+    "pass": "{{ bots_user.password }}"
   },
 
   "sponsor": {

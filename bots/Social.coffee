@@ -14,13 +14,14 @@ Twitter  = new (require('twit'))({
 Twitter.get('statuses/user_timeline', {
   screen_name:     config.screen_name
   include_rt:      false
-  count:           15
+  count:           25
   exclude_replies: true
 }, (err, tweets, response)->
   console.log err
   for tweet in tweets
     date = tweet.created_at.split(' ')
     date = "#{date[0]}, #{date[2]} #{date[1]} #{date[5]} #{date[3]}"
+    date = new Date(date).getTime()
     tweet = {
       id:         tweet.id
       created_at: date
@@ -28,14 +29,18 @@ Twitter.get('statuses/user_timeline', {
       text:       tweet.text
       img:        tweet.user.profile_image_url
     }
-    Tweet.save(tweet).done()
+    Tweet.save(tweet).then((->), (err)->
+      console.log err
+    )
 )
 
 Twitter.get('users/show', {
   screen_name: config.screen_name
 }, (err, data, response)->
   console.log err
-  Tweet.saveFollowers(data.followers_count).done()
+  Tweet.saveFollowers(data.followers_count).then( (->), (err)->
+    console.log err
+  )
 )
 
 http.request({
@@ -47,7 +52,9 @@ http.request({
   res.setEncoding('utf-8')
   res.on('data', (body)->
     body = JSON.parse(body)
-    Facebook.saveLikes(body.likes).done()
+    Facebook.saveLikes(body.likes).then( (->), (err)->
+      console.log err
+    )
   )
 ).end()
 

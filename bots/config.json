@@ -2,7 +2,7 @@
   "db": {
     "host":     "127.0.0.1",
     "port":     "5984",
-    "database": "site",
+    "database": "{{ ll_com.dbname }}",
     "name":     "lupolibero.com"
   },
 
@@ -27,15 +27,15 @@
   },
 
   "twitter": {
-    "key":           "",
-    "secret":        "",
-    "token":         "",
-    "token_secret":  "",
-    "screen_name":   ""
+    "key":           "{{ twitter.key }}",
+    "secret":        "{{ twitter.secret }}",
+    "token":         "{{ twitter.token }}",
+    "token_secret":  "{{ twitter.token_secret }}",
+    "screen_name":   "{{ twitter.screen_name }}"
   },
 
-  "facebook": "",
+  "facebook": "{{ facebook_page_name }}",
 
-  "indiegogo": ""
+  "indiegogo": "{{ indiegogo_url }}"
 
 }

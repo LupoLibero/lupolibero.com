@@ -33,7 +33,7 @@ module.exports = {
   send: (notification, username)=>
     defer = Q.defer()
     emailObj = {
-      from:    "#{config.name} ✔ <#{config.email}>",
+      from:    "#{config.name} <#{config.email}>",
       subject: notification.subject
       text:    notification.message_txt
       html:    notification.message_html

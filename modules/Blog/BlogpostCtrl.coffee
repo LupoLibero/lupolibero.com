@@ -2,7 +2,7 @@ angular.module('blog').
 controller('BlogpostCtrl', ($scope, blogpost, Comment) ->
   $scope.blogpost = blogpost
 
-  $scope.author = {bio: "Sylvain Duchesne is...."}
+  # $scope.author = {bio: "Sylvain Duchesne is...."}
 
   $scope.commentNb = 0
 
@@ -54,6 +54,6 @@ controller('BlogpostCtrl', ($scope, blogpost, Comment) ->
           $scope.loading = false
       )
 
-  $scope.facebookCount = 43
-  $scope.twitterCount = 2
+  # $scope.facebookCount = 43
+  # $scope.twitterCount = 2
 )

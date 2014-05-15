@@ -8,7 +8,7 @@ config( ($stateProvider) ->
       resolve:
         page: (Presentation, $q) ->
           defer = $q.defer()
-          return Presentation.getDoc({
+          Presentation.getDoc({
             _id: "presentation:#{window.navigator.language}"
           }).then(
             (data)-> #Success
@@ -33,7 +33,7 @@ config( ($stateProvider) ->
           })
         page: (Presentation, $q) ->
           defer = $q.defer()
-          return Presentation.getDoc({
+          Presentation.getDoc({
             _id: "home:#{window.navigator.language}"
           }).then(
             (data)-> #Success
@@ -42,7 +42,10 @@ config( ($stateProvider) ->
               defer.resolve({})
           )
           return defer.promise
-        follower: (Presentation) ->
+        indiegogo: (Presentation, $q) ->
+          return Presentation.getDoc({
+            _id: "indiegogo"
+          })
     })
     .state('contact', {
       url:         '/contact'
@@ -55,7 +58,7 @@ config( ($stateProvider) ->
           })
         page: (Presentation, $q) ->
           defer = $q.defer()
-          return Presentation.getDoc({
+          Presentation.getDoc({
             _id: "contact:#{window.navigator.language}"
           }).then(
             (data)-> #Success

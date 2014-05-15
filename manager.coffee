@@ -201,14 +201,17 @@ appPush = (envOrUrl) ->
   deferred = Q.defer()
   getUrlFromEnv(envOrUrl).then (url)->
     console.log "node manager.js app push", urlWithoutCredentials(url)
-    callCommand(format("kanso push %s", url))
+    callCommand(format("kanso push %s --minify", url))
 
 # Clone the production db
 appInit = (envOrUrl) ->
   deferred = Q.defer()
   getUrlFromEnv(envOrUrl).then (url)->
     console.log "node manager.js app init", urlWithoutCredentials(url)
-    callCommand(format("kanso replicate %s %s", PROD_DB_URL, url))
+    if production
+      callCommand(format("grunt init -db=%s", url))
+    else
+      callCommand(format("kanso replicate %s %s", PROD_DB_URL, url))
 
 registerVhost = (env, domainName) ->
   getUrlFromEnv(env).then (dbUrl)->

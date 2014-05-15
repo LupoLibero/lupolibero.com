@@ -9,7 +9,7 @@
 
 <accordion close-others="true">
   <accordion-group ng-repeat="idea in ideas" heading="{{ idea.short }}" is-open="$first">
-    <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="" src="{{ idea.img }}" ng-show="{{ idea.img }}"/>
+    <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="thumbnail" src="{{ idea.img }}" ng-show="{{ idea.img }}"/>
     {{ idea.long }}
   </accordion-group>
 </accordion>
@@ -17,7 +17,7 @@
 <!-- Price Table -->
 <table>
   <tr>
-            <!-- TODO: Price Table Here -->
+    <!-- TODO: Price Table Here -->
     <td></td>
   </tr>
 </table>

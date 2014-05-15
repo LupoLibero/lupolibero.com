@@ -75,7 +75,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <i class="icon-menu-1"></i>
             </button>
-            <a class="navbar-brand" ui-sref="home"><img alt="" src="images/logo.png"></a>
+            <a class="navbar-brand" ui-sref="home"><img alt="logo" src="images/logo.png"></a>
           </div>
 
           <!-- Collapse -->
@@ -134,8 +134,8 @@
 
           <div class="social-button">
             <button class="btn btn-link pull-left" ng-click="$storage.facebook=!$storage.facebook">
-              <img ng-hide="$storage.facebook" src="images/switch_button_off.png" alt="switch facebook" />
-              <img ng-show="$storage.facebook" src="images/switch_button_on.png"  alt="switch facebook" />
+              <img ng-hide="$storage.facebook" src="images/switch_button_off.png" alt="switch facebook off" />
+              <img ng-show="$storage.facebook" src="images/switch_button_on.png"  alt="switch facebook on"  />
             </button>
 
             <div ng-show="$storage.facebook">
@@ -154,8 +154,8 @@
 
           <div class="social-button">
             <button class="btn btn-link pull-left" ng-click="$storage.twitter=!$storage.twitter">
-              <img ng-hide="$storage.twitter" src="images/switch_button_off.png" alt="switch twitter" />
-              <img ng-show="$storage.twitter" src="images/switch_button_on.png"  alt="switch twitter" />
+              <img ng-hide="$storage.twitter" src="images/switch_button_off.png" alt="switch twitter off" />
+              <img ng-show="$storage.twitter" src="images/switch_button_on.png"  alt="switch twitter on" />
             </button>
 
             <div ng-if="$storage.twitter" class="pull-left">
@@ -216,7 +216,7 @@
               <form class="subscribe" ng-submit="subscribe()">
                 <input type="email" ng-model="subscription.email" placeholder="mail@example.com">
                 <select ng-model="subscription.every" required>
-                  <option value=""></option>
+                  <option value="empty"></option>
                   <option value="day">Day</option>
                   <option value="week">Week</option>
                   <option value="month">Month</option>
@@ -228,7 +228,7 @@
             <div class="footer-widget social-widget">
               <h4>Follow Us<span class="head-line"></span></h4>
               <ul class="social-icons">
-                <li><a class="facebook" href="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Flupolibero.net&width&height=80&colorscheme=light&layout=standard&show_faces=true"><i class="icon-facebook-2" ></i></a></li>
+                <li><a class="facebook" href="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Flupolibero.net&amp;width&amp;height=80&amp;colorscheme=light&amp;layout=standard&amp;show_faces=true"><i class="icon-facebook-2" ></i></a></li>
                 <li><a class="twitter"  href="https://twitter.com/intent/user?screen_name=lupo_libero"><i class="icon-twitter-2"  ></i></a></li>
                 <!-- <li><a class="google"   href="#"><i class="icon-gplus-1"    ></i></a></li> -->
               </ul>

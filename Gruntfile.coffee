@@ -139,6 +139,7 @@ module.exports = (grunt) ->
   ])
 
   grunt.registerTask('prod', [
+    'coffee'
     'uglify'
     'cssmin'
     'imagemin'

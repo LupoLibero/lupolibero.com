@@ -1,5 +1,5 @@
 angular.module('presentation').
-controller('ContactCtrl', ($scope, pageDefault, page, Notif) ->
+controller('ContactCtrl', ($scope, pageDefault, page, Notif, notification) ->
   $scope.page        = angular.extend(pageDefault, page)
   $scope.form_action = ""
   $scope.contact     = {}
@@ -16,7 +16,8 @@ controller('ContactCtrl', ($scope, pageDefault, page, Notif) ->
       name:    $scope.contact.name
     }).then(
       (data)-> #Success
-        console.log data
+        notification.addAlert('Message send', 'success')
+        $scope.contact = {}
       ,(err)-> #Error
         console.log err
     )

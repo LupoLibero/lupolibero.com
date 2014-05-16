@@ -29,6 +29,8 @@ Twitter.get('statuses/user_timeline', {
       text:       tweet.text
       img:        tweet.user.profile_image_url
     }
+    # Search for link and make a tag
+    tweet.text = tweet.text.replace(/(https?:\/\/[\w\/\-\.]*)/g, '<a href="$1">$1</a> ')
     Tweet.save(tweet).then((->), (err)->
       console.log err
     )

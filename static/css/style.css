@@ -5142,3 +5142,8 @@ ul.footer-nav li a:hover {
 .progress-bar {
   font-weight: 700
 }
+
+.social-switch {
+  margin-top: -5px;
+  float: left;
+}

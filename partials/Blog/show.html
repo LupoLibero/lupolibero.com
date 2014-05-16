@@ -19,7 +19,7 @@
           data-image="'http://s3.mistinfo.com/32/d8/32d8eab76f4c242f665bda66b5edc6c5.jpg'">
           <li translate>Share This Post:</li>
           <li class="social-button">
-            <button class="btn btn-link pull-left" ng-click="$storage.facebook=!$storage.facebook">
+            <button class="btn btn-link social-switch" ng-click="$storage.facebook=!$storage.facebook">
               <img ng-hide="$storage.facebook" src="images/switch_button_off.png" alt="switch facebook" />
               <img ng-show="$storage.facebook" src="images/switch_button_on.png"  alt="switch facebook" />
             </button>
@@ -29,7 +29,7 @@
 
           </li>
           <li class="social-button">
-            <button class="btn btn-link pull-left" ng-click="$storage.twitter=!$storage.twitter">
+            <button class="btn btn-link social-switch" ng-click="$storage.twitter=!$storage.twitter">
               <img ng-hide="$storage.twitter" src="images/switch_button_off.png" alt="switch twitter" />
               <img ng-show="$storage.twitter" src="images/switch_button_on.png"  alt="switch twitter" />
             </button>

@@ -135,7 +135,7 @@
         <div class="section">
 
           <div class="social-button">
-            <button class="btn btn-link pull-left" ng-click="$storage.facebook=!$storage.facebook">
+            <button class="btn btn-link social-switch" ng-click="$storage.facebook=!$storage.facebook">
               <img ng-hide="$storage.facebook" src="images/switch_button_off.png" alt="switch facebook off" />
               <img ng-show="$storage.facebook" src="images/switch_button_on.png"  alt="switch facebook on"  />
             </button>
@@ -155,7 +155,7 @@
           </div>
 
           <div class="social-button">
-            <button class="btn btn-link pull-left" ng-click="$storage.twitter=!$storage.twitter">
+            <button class="btn btn-link social-switch" ng-click="$storage.twitter=!$storage.twitter">
               <img ng-hide="$storage.twitter" src="images/switch_button_off.png" alt="switch twitter off" />
               <img ng-show="$storage.twitter" src="images/switch_button_on.png"  alt="switch twitter on" />
             </button>
@@ -202,7 +202,7 @@
                 <li ng-repeat="tweet in tweets |orderBy:'+created_at'">
                   <p>
                     <a ng-href="https://twitter.com/{{tweet.author}}">@{{tweet.author}}</a>
-                    {{tweet.text}}
+                    <span bind-html-unsafe="tweet.text"></span>
                   </p>
                   <span>{{tweet.created_at |date}}</span>
                 </li>

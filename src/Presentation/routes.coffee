@@ -4,11 +4,11 @@ config( ($stateProvider) ->
     .state('presentation', {
       url:         '/presentation'
       templateUrl: 'partials/presentation.html'
-      controller:  'PresentationCtrl'
+      controller:  'PageCtrl'
       resolve:
-        page: (Presentation, $q) ->
+        page: (Page, $q) ->
           defer = $q.defer()
-          Presentation.getDoc({
+          Page.getDoc({
             _id: "presentation:#{window.navigator.language}"
           }).then(
             (data)-> #Success
@@ -17,8 +17,8 @@ config( ($stateProvider) ->
               defer.resolve({})
           )
           return defer.promise
-        pageDefault: (Presentation) ->
-          return Presentation.getDoc({
+        pageDefault: (Page) ->
+          return Page.getDoc({
             _id: "presentation:en"
           })
     })
@@ -27,13 +27,13 @@ config( ($stateProvider) ->
       templateUrl: 'partials/home.html'
       controller:  'HomeCtrl'
       resolve:
-        pageDefault: (Presentation) ->
-          return Presentation.getDoc({
+        pageDefault: (Page) ->
+          return Page.getDoc({
             _id: 'home:en'
           })
-        page: (Presentation, $q) ->
+        page: (Page, $q) ->
           defer = $q.defer()
-          Presentation.getDoc({
+          Page.getDoc({
             _id: "home:#{window.navigator.language}"
           }).then(
             (data)-> #Success
@@ -42,8 +42,8 @@ config( ($stateProvider) ->
               defer.resolve({})
           )
           return defer.promise
-        indiegogo: (Presentation, $q) ->
-          return Presentation.getDoc({
+        indiegogo: (Page, $q) ->
+          return Page.getDoc({
             _id: "indiegogo"
           })
     })
@@ -52,13 +52,13 @@ config( ($stateProvider) ->
       templateUrl: 'partials/contact.html'
       controller:  'ContactCtrl'
       resolve:
-        pageDefault: (Presentation) ->
-          return Presentation.getDoc({
+        pageDefault: (Page) ->
+          return Page.getDoc({
             _id: 'contact:en'
           })
-        page: (Presentation, $q) ->
+        page: (Page, $q) ->
           defer = $q.defer()
-          Presentation.getDoc({
+          Page.getDoc({
             _id: "contact:#{window.navigator.language}"
           }).then(
             (data)-> #Success

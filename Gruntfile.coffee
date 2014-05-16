@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     watch: {
       all: {
         files: [
-          'modules/{,*/}*'
+          'src/{,*/}*'
           'partials/{,*/}*'
           'lib/{,*/}*'
         ]
@@ -21,10 +21,10 @@ module.exports = (grunt) ->
       dist: {
         files:
           'static/js/main.js': [
-            'modules/*/__init__.coffee'
-            'modules/*/config.coffee'
-            'modules/*/routes.coffee'
-            'modules/*/*.coffee'
+            'src/*/__init__.coffee'
+            'src/*/config.coffee'
+            'src/*/routes.coffee'
+            'src/*/*.coffee'
           ]
       }
     }

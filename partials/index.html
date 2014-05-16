@@ -180,22 +180,26 @@
     <!-- Start Footer -->
     <footer>
       <div class="container">
-        <div class="row footer-widgets">
 
-          <!-- Start Contact Widget -->
+          <!-- Start Subscribe &-->
           <div class="col-md-3">
-            <div class="footer-widget contact-widget">
-              <h4>Contact info<span class="head-line"></span></h4>
-              <ul>
-                <li><span translate>Email:</span> contact@lupolibero.com</li>
-                <li><span translate>Website:</span> www.lupolibero.com</li>
-              </ul>
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>Get in touch<span class="head-line"></span></h4>
+              <p translate>Join our mailing list to stay up to date and get notices about our new releases!</p>
+              <form class="subscribe" ng-submit="subscribe()">
+                <input type="email" ng-model="subscription.email" placeholder="mail@example.com">
+                <select ng-model="subscription.every" required>
+                  <option value="day">Day</option>
+                  <option value="week">Week</option>
+                  <option value="month">Month</option>
+                </select>
+                <input type="submit" class="main-button" value="Send">
+              </form>
             </div>
           </div>
 
-
           <!-- Start Twitter Widget -->
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="footer-widget twitter-widget">
               <h4>Twitter Feed<span class="head-line"></span></h4>
               <ul>
@@ -210,23 +214,8 @@
             </div>
           </div>
 
-          <!-- Start Subscribe & Social Links Widget -->
-          <div class="col-md-3">
-            <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p translate>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe" ng-submit="subscribe()">
-                <input type="email" ng-model="subscription.email" placeholder="mail@example.com">
-                <select ng-model="subscription.every" required>
-                  <option value="empty"></option>
-                  <option value="day">Day</option>
-                  <option value="week">Week</option>
-                  <option value="month">Month</option>
-                </select>
-                <input type="submit" class="main-button" value="Send">
-              </form>
-            </div>
-
+          <!-- Social Links Widget -->
+          <div class="col-md-2">
             <div class="footer-widget social-widget">
               <h4>Follow Us<span class="head-line"></span></h4>
               <ul class="social-icons">
@@ -268,6 +257,7 @@
 
   <!-- Jquery -->
   <script src="vendor/jquery/dist/jquery.js                             "></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js                    "></script>
   <script src="vendor/spin.js/spin.js                                   "></script>
   <script src="js/nivo-lightbox.min.js                                  "></script>
   <script src="js/jquery.themepunch.plugins.min.js                      "></script>

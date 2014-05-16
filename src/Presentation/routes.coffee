@@ -4,7 +4,7 @@ config( ($stateProvider) ->
     .state('presentation', {
       url:         '/presentation'
       templateUrl: 'partials/presentation.html'
-      controller:  'PageCtrl'
+      controller:  'PresentationCtrl'
       resolve:
         page: (Page, $q) ->
           defer = $q.defer()

@@ -3,7 +3,6 @@ angular.module('site', [
   'gettext'
   'ngCouchDB'
   'presentation'
-  'breadcrumb'
   'blog'
   'comment'
   'ngSocial'

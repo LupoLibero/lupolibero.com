@@ -1,18 +1,16 @@
 angular.module('site').
-controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet)->
+controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet, Page)->
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
   $rootScope.$on('$stateChangeStart', ($event, to)->
     $('#loader').fadeIn(150)
+    # Scroll to top
     $('html, body').animate({scrollTop: 0}, 800)
   )
   $rootScope.$on('$stateChangeSuccess', ($event, to)->
     $scope.title = to.name
     $('#loader').fadeOut()
-  )
-  $rootScope.$on('$stateChangeError', ($event, toState, toParams, fromState, fromParams, error)->
-    console.log $event, toState, toParams, fromState, fromParams, error
   )
 
   # Translate the interface in the language of the navigator
@@ -29,9 +27,6 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   unless $rootScope.$storage.googlePlus?
     $rootScope.$storage.googlePlus = false
 
-  $scope.facebookCount = 43
-  $scope.twitterCount = 2
-
   Tweet.all({
     limit: 4
     descending: true
@@ -42,7 +37,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
       console.log err
   )
 
-  Tweet.getDoc({
+  Page.getDoc({
     _id: 'follower'
   }).then(
     (data)-> #Success

@@ -12,10 +12,10 @@
   </div>
   <div ng-switch on="parentObj._id == comment._id">
     <div ng-switch-when="true">
-      <div ng-include="'add_comment.html'"></div>
+      <div ng-include="'partials/add_comment.html'"></div>
     </div>
   </div>
   <div ng-switch-when="true">
-    <ul ng-init="comments = comment.comments;" ng-include="'comment.html'"></ul>
+    <ul ng-init="comments = comment.comments;" ng-include="'partials/comment.html'"></ul>
   </div>
 </li>

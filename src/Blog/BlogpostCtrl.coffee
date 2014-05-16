@@ -36,6 +36,7 @@ controller('BlogpostCtrl', ($scope, blogpost, Comment) ->
 
       Comment.update({
         update: 'create_public'
+
         author:     comment.name
         message:    comment.message
         email:      comment.email

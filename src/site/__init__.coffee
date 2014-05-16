@@ -2,7 +2,7 @@ angular.module('site', [
   'ui.router'
   'gettext'
   'ngCouchDB'
-  'presentation'
+  'page'
   'blog'
   'comment'
   'ngSocial'

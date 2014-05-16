@@ -1,4 +1,4 @@
-angular.module('presentation').
+angular.module('page').
 controller('ContactCtrl', ($scope, pageDefault, page, Notif, notification) ->
   $scope.page        = angular.extend(pageDefault, page)
   $scope.form_action = ""

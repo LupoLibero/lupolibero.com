@@ -1,4 +1,4 @@
-angular.module('presentation').
+angular.module('page').
 config( ($stateProvider) ->
   $stateProvider
     .state('presentation', {

@@ -2,6 +2,7 @@ config     = require('./config.json').smtp
 nodemailer = require('nodemailer')
 Q          = require('q')
 User       = require('./Model/User')
+
 smtpTransport = nodemailer.createTransport("SMTP", {
   host: config.host
   secureConnection: true
@@ -19,6 +20,7 @@ getMail = (data)->
 
   if emailObj.to != ''
     defer.resolve(emailObj)
+    return defer.promise
 
   User.get(username).then(
     (data) -> #Success

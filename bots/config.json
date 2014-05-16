@@ -15,7 +15,7 @@
     "port":     "465"
   },
 
-  "notification_manager": {
+  "bots_user": {
     "name": "{{ bots_user.name }}",
     "pass": "{{ bots_user.password }}"
   },

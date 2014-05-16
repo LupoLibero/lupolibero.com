@@ -1,6 +1,7 @@
 https   = require('https')
 db      = require('./db')()
 url     = require('./config.json').indiegogo
+user    = require('./config.json').bots_user
 cheerio = require('cheerio')
 
 https.get(url, (res)->
@@ -20,5 +21,10 @@ https.get(url, (res)->
     info.contributor != '' and
     info.time        != '' and
     info.max         != ''
-      db.update('indiegogo_save', 'indiegogo', info)
+      db.update('indiegogo_save', 'indiegogo', info, user).then(
+        (data)-> #Success
+          console.log data
+        ,(err)-> #Error
+          console.log err
+      )
 )

@@ -20,12 +20,6 @@
     "pass": "{{ bots_user.password }}"
   },
 
-  "sponsor": {
-    "email_filename": "sponsors.xlsx",
-    "search_term": "mail@sylvainduchesne.com",
-    "worksheet": "Feuille1"
-  },
-
   "twitter": {
     "key":           "{{ twitter.key }}",
     "secret":        "{{ twitter.secret }}",

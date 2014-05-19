@@ -45,7 +45,6 @@ plusOneIfProd = (nb) ->
   return nb + (if production then 1 else 0)
 
 lastArgOrDefault = (argNum) ->
-  console.log argNum
   if process.argv.length > argNum
     return process.argv[argNum]
   else
@@ -70,11 +69,9 @@ encrypt = (text, pwd)->
   return crypted;
 
 saveEnvsToDisk = (envs, filepath)->
-  console.log envs
   wstream = fs.createWriteStream(filepath)
   wstream.write('exports.env = {\n')
   for envName, env of envs
-    console.log envName, env
     wstream.write("  '" + envName + "': {\n")
     wstream.write("    db: '" + env.db + "'\n")
     wstream.write("  },\n")
@@ -85,15 +82,10 @@ saveEnvsToDisk = (envs, filepath)->
 encryptEnvs = (file)->
   getProdEnvs().then (envs)->
     prompt.start()
-    console.log "password to encrypt", file
     prompt.get(PASSWORD_PROMPT, (err, result)->
       if result.password != ""
-        console.log envs
         for envName, env of envs
-          console.log env, envName
-          console.log "encrypt", env.db
           envs[envName].db = encrypt(env.db, result.password)
-          console.log envName, envs[envName]
       saveEnvsToDisk(envs, file)
     )
 
@@ -107,16 +99,13 @@ getProdEnvs = ->
     envs = require('./.kansorc_prod').env
     if result.password != ""
       for envName, env of envs
-        console.log "decrypt", envName, env
         envs[envName].db = decrypt(env.db, result.password)
-        console.log envs[envName].db
         unless isUrl(envs[envName].db)
           deferred.reject(envs)
     deferred.resolve(envs)
   return deferred.promise
 
 getEnvs = ->
-  console.log "getEnvs"
   if production
     return getProdEnvs()
   else
@@ -124,7 +113,6 @@ getEnvs = ->
 
 getUrlFromEnv = (envOrUrl) ->
   deferred = Q.defer()
-  console.log "get url from", envOrUrl
   if isUrl(envOrUrl)
     return envOrUrl
 
@@ -152,9 +140,7 @@ copyFileSync = (srcFile, destFile) ->
 
 callCommand = (cmd) ->
   deferred = Q.defer()
-  console.log cmd
   args = cmd.split(" ")
-  console.log args
   p = spawn(args[0], args[1..])
 
   #p.stdout.on('data', (data) ->
@@ -208,9 +194,7 @@ appInit = (envOrUrl) ->
   deferred = Q.defer()
   getUrlFromEnv(envOrUrl).then (url)->
     console.log "node manager.js app init", urlWithoutCredentials(url)
-    if production
-      callCommand(format("grunt init -db=%s", url))
-    else
+    unless production
       callCommand(format("kanso replicate %s %s", PROD_DB_URL, url))
 
 registerVhost = (env, domainName) ->

@@ -9,7 +9,7 @@ config( ($stateProvider) ->
         page: (Page, $q) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "presentation:#{window.navigator.language}"
+            _id: "presentation:#{window.navigator.language[0..1]}"
           }).then(
             (data)-> #Success
               defer.resolve(data)
@@ -34,7 +34,7 @@ config( ($stateProvider) ->
         page: (Page, $q) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "home:#{window.navigator.language}"
+            _id: "home:#{window.navigator.language[0..1]}"
           }).then(
             (data)-> #Success
               defer.resolve(data)
@@ -59,7 +59,7 @@ config( ($stateProvider) ->
         page: (Page, $q) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "contact:#{window.navigator.language}"
+            _id: "contact:#{window.navigator.language[0..1]}"
           }).then(
             (data)-> #Success
               defer.resolve(data)

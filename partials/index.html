@@ -97,7 +97,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a ui-sref-active="active" ui-sref="home"         translate>Home</a></li>
               <li><a ui-sref-active="active" ui-sref="presentation" translate>Presentation</a></li>
-              <li><a ui-sref-active="active" ui-sref="blog"         translate>Blog</a></li>
+              <!--<li><a ui-sref-active="active" ui-sref="blog"         translate>Blog</a></li>-->
               <li><a ui-sref-active="active" ui-sref="contact"      translate>Contact</a></li>
             </ul>
             <!-- End Navigation List -->
@@ -181,25 +181,8 @@
     <footer>
       <div class="container">
 
-          <!-- Start Subscribe &-->
-          <div class="col-md-3">
-            <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p translate>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe" ng-submit="subscribe()">
-                <input type="email" ng-model="subscription.email" placeholder="mail@example.com">
-                <select ng-model="subscription.every" required>
-                  <option value="day">Day</option>
-                  <option value="week">Week</option>
-                  <option value="month">Month</option>
-                </select>
-                <input type="submit" class="main-button" value="Send">
-              </form>
-            </div>
-          </div>
-
           <!-- Start Twitter Widget -->
-          <div class="col-md-6">
+          <div class="col-md-7">
             <div class="footer-widget twitter-widget">
               <h4>Twitter Feed<span class="head-line"></span></h4>
               <ul>
@@ -211,6 +194,23 @@
                   <span>{{tweet.created_at |date}}</span>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <!-- Start Subscribe &-->
+          <div class="col-md-3">
+            <div class="footer-widget mail-subscribe-widget">
+              <h4>Get in touch<span class="head-line"></span></h4>
+              <p translate>Join our mailing list to stay up to date!</p>
+              <form class="subscribe" ng-submit="subscribe()">
+                <input type="email" ng-model="subscription.email" placeholder="mail@example.com"><br/>
+                <span translate>Frequency:</span>
+                <select ng-model="subscription.every" required>
+                  <option value="weekly" translate>Weekly</option>
+                  <option value="monthly" translate>Monthly</option>
+                </select>
+                <input type="submit" class="main-button"/>
+              </form>
             </div>
           </div>
 

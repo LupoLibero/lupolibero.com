@@ -1,5 +1,5 @@
 angular.module('site').
-controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet, Page)->
+controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet, Page, Subscription, notification)->
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
@@ -13,12 +13,14 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
     $('#loader').fadeOut()
   )
 
+  $rootScope.langCode = window.navigator.language[0..1]
+  console.log $rootScope.langCode
   # Translate the interface in the language of the navigator
-  $rootScope.$broadcast('$ChangeLanguage', window.navigator.language)
+  $rootScope.$broadcast('$ChangeLanguage', $rootScope.langCode)
   $rootScope.$on('$translateChangeError', ->
     $rootScope.$broadcast('$ChangeLanguage', 'en')
   )
-  $rootScope.langCode = window.navigator.language
+
 
   unless $rootScope.$storage.facebook?
     $rootScope.$storage.facebook = false
@@ -55,7 +57,7 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
       every: $scope.subscription.every
     }).then(
       (data)-> #Success
-        notification.addAlert('You have subscribe to the newsletter', 'success')
+        notification.addAlert('You have subscribed to the newsletter', 'success')
         $scope.subscription = {}
       ,(err)-> #Error
         console.log err

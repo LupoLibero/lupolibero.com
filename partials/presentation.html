@@ -1,24 +1,3 @@
-<!-- Classic Heading -->
-<h4 class="classic-title"><span>Page With Right Sidebar</span></h4>
 
-<!-- Some Text -->
-<p>{{ presentation }}</p>
+<div bind-html-unsafe="page.content"></div>
 
-<!-- Divider -->
-<div class="hr5" style="margin-top:30px; margin-bottom:45px;"></div>
-
-<accordion close-others="true">
-  <accordion-group ng-repeat="idea in ideas" heading="{{ idea.short }}" is-open="$first">
-    <img class="img-thumbnail image-text" style="float:left; width:180px;" alt="thumbnail" src="{{ idea.img }}" ng-show="{{ idea.img }}"/>
-    {{ idea.long }}
-  </accordion-group>
-</accordion>
-
-<!-- Price Table -->
-<table>
-  <tr>
-    <!-- TODO: Price Table Here -->
-    <td></td>
-  </tr>
-</table>
-<!-- End Price Table -->

@@ -6,10 +6,10 @@ config( ($stateProvider) ->
       templateUrl: 'partials/presentation.html'
       controller:  'PresentationCtrl'
       resolve:
-        page: (Page, $q) ->
+        page: (Page, $q, $rootScope) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "presentation:#{window.navigator.language[0..1]}"
+            _id: "presentation:#{$rootScope.langCode}"
           }).then(
             (data)-> #Success
               defer.resolve(data)
@@ -31,10 +31,10 @@ config( ($stateProvider) ->
           return Page.getDoc({
             _id: 'home:en'
           })
-        page: (Page, $q) ->
+        page: (Page, $q, $rootScope) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "home:#{window.navigator.language[0..1]}"
+            _id: "home:#{$rootScope.langCode}"
           }).then(
             (data)-> #Success
               defer.resolve(data)
@@ -56,10 +56,10 @@ config( ($stateProvider) ->
           return Page.getDoc({
             _id: 'contact:en'
           })
-        page: (Page, $q) ->
+        page: (Page, $q, $rootScope) ->
           defer = $q.defer()
           Page.getDoc({
-            _id: "contact:#{window.navigator.language[0..1]}"
+            _id: "contact:#{$rootScope.langCode}"
           }).then(
             (data)-> #Success
               defer.resolve(data)

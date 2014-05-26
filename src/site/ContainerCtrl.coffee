@@ -3,6 +3,34 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
   $rootScope.$storage  = $localStorage
   $rootScope.$location = $location
 
+  if window.localStorage and $scope.$storage.lang?
+    $rootScope.langCode = $scope.$storage.lang
+    console.log 'storage'
+
+  search = $location.search()
+  if search['hl']?
+    console.log 'get param'
+    if search['hl'] is 'fr'
+      $rootScope.langCode = 'fr'
+    else if search['hl'] is 'en'
+      $rootScope.langCode = 'en'
+
+  if not $rootScope.langCode?
+    console.log 'navigator'
+    lang = window.navigator.language
+    lang = lang.split('-')
+    lang = lang[0]
+    if lang is 'fr'
+      $rootScope.langCode = 'fr'
+    else
+      $rootScope.langCode = 'en'
+
+  if window.localStorage
+    $scope.$storage.lang = $rootScope.langCode
+    console.log 'save in storage'
+
+  console.log 'lang', $rootScope.langCode
+
   $rootScope.$on('$stateChangeStart', ($event, to)->
     $('#loader').fadeIn(150)
     # Scroll to top
@@ -13,14 +41,11 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
     $('#loader').fadeOut()
   )
 
-  $rootScope.langCode = window.navigator.language[0..1]
-  console.log $rootScope.langCode
   # Translate the interface in the language of the navigator
   $rootScope.$broadcast('$ChangeLanguage', $rootScope.langCode)
   $rootScope.$on('$translateChangeError', ->
     $rootScope.$broadcast('$ChangeLanguage', 'en')
   )
-
 
   unless $rootScope.$storage.facebook?
     $rootScope.$storage.facebook = false

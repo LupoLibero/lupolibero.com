@@ -10,13 +10,13 @@ config( ($stateProvider) ->
           return Blogpost.view({
             view: 'max'
           })
-        blogpostList: (Blogpost, $stateParams) ->
+        blogpostList: (Blogpost, $stateParams, $rootScope) ->
           page =  $stateParams.page ? 1
           page--
           return Blogpost.all({
             descending: true
-            startkey:   [window.navigator.language, {}]
-            endkey:     [window.navigator.language, ""]
+            startkey:   [$rootScope.langCode, {}]
+            endkey:     [$rootScope.langCode, ""]
             limit:      10
             skip:       page*10
           })

@@ -15,7 +15,7 @@ $(document).ready(function($) {
   /*	Hidder Header
   /*----------------------------------------------------*/
   var $headerHeight = $header.height();
-  $hiddenHeader.css({ 'height' : $headerHeight  + "px" });
+  $hiddenHeader.css({ 'height' : "300px" });
 
   /*----------------------------------------------------*/
   /*	Back Top Link

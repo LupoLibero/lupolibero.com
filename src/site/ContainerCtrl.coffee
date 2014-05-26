@@ -5,18 +5,15 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
 
   if window.localStorage and $scope.$storage.lang?
     $rootScope.langCode = $scope.$storage.lang
-    console.log 'storage'
 
   search = $location.search()
   if search['hl']?
-    console.log 'get param'
     if search['hl'] is 'fr'
       $rootScope.langCode = 'fr'
     else if search['hl'] is 'en'
       $rootScope.langCode = 'en'
 
   if not $rootScope.langCode?
-    console.log 'navigator'
     lang = window.navigator.language
     lang = lang.split('-')
     lang = lang[0]
@@ -27,9 +24,11 @@ controller('ContainerCtrl', ($scope, $rootScope, $localStorage, $location, Tweet
 
   if window.localStorage
     $scope.$storage.lang = $rootScope.langCode
-    console.log 'save in storage'
 
-  console.log 'lang', $rootScope.langCode
+  if $rootScope.langCode is 'fr'
+    $rootScope.descriptionMeta = 'Lupo Libero, un service de stockage de fichiers en ligne, en logiciel libre, qui protège votre vie privée avec du chiffrement de bout-en-bout'
+  else
+    $rootScope.descriptionMeta = 'Lupo Libero, an easy to use free and open source online storage service that protects your privacy with end-to-end encryption'
 
   $rootScope.$on('$stateChangeStart', ($event, to)->
     $('#loader').fadeIn(150)

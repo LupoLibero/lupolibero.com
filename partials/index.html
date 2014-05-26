@@ -1,11 +1,11 @@
 <!doctype html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
-<html lang="en" ng-app="site">
+<html lang="{{langCode}}" ng-app="site" ng-controller="ContainerCtrl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport"    content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Lupo Libero, an easy to use free and open source online storage service that protects your privacy with end-to-end encryption">
+  <meta name="description" content="{{ descriptionMeta }}">
   <meta name="keyword"     content="cloud privacy easy open source protects">
   <meta name="author"      content="lupolibero">
 
@@ -41,7 +41,7 @@
   <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
-<body ng-controller="ContainerCtrl" class="boxed-page">
+<body class="boxed-page">
   <div id="container">
 
     <div class="hidden-header"></div>
